@@ -1,0 +1,153 @@
+CREATE DATABASE IF NOT EXISTS digicnc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE digicnc;
+
+CREATE TABLE IF NOT EXISTS admin_users (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(160) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    role VARCHAR(40) NOT NULL DEFAULT 'admin',
+    last_login_at TIMESTAMP NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS services (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(160) NOT NULL,
+    slug VARCHAR(180) NOT NULL UNIQUE,
+    short_description TEXT NULL,
+    content LONGTEXT NULL,
+    meta_title VARCHAR(180) NULL,
+    meta_description VARCHAR(320) NULL,
+    status VARCHAR(40) NOT NULL DEFAULT 'published',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_services_status (status),
+    INDEX idx_services_slug (slug)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS blog_categories (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    slug VARCHAR(160) NOT NULL UNIQUE,
+    description TEXT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS blogs (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(180) NOT NULL,
+    slug VARCHAR(180) NOT NULL UNIQUE,
+    category VARCHAR(120) NULL,
+    excerpt TEXT NULL,
+    content LONGTEXT NULL,
+    featured_image VARCHAR(255) NULL,
+    meta_title VARCHAR(180) NULL,
+    meta_description VARCHAR(320) NULL,
+    schema_type VARCHAR(80) DEFAULT 'BlogPosting',
+    published_at TIMESTAMP NULL,
+    status VARCHAR(40) NOT NULL DEFAULT 'draft',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FULLTEXT KEY ft_blogs_title_content (title, excerpt, content),
+    INDEX idx_blogs_slug (slug),
+    INDEX idx_blogs_status (status),
+    INDEX idx_blogs_category (category)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS gallery_items (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(160) NOT NULL,
+    category VARCHAR(120) NOT NULL,
+    image_path VARCHAR(255) NULL,
+    alt_text VARCHAR(255) NOT NULL,
+    sort_order INT NOT NULL DEFAULT 0,
+    status VARCHAR(40) NOT NULL DEFAULT 'published',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_gallery_category (category),
+    INDEX idx_gallery_status_sort (status, sort_order)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS testimonials (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    client_name VARCHAR(160) NOT NULL,
+    client_role VARCHAR(160) NULL,
+    quote TEXT NOT NULL,
+    rating TINYINT UNSIGNED NOT NULL DEFAULT 5,
+    status VARCHAR(40) NOT NULL DEFAULT 'published',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_testimonials_status (status)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS faqs (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    answer TEXT NOT NULL,
+    page_slug VARCHAR(180) NOT NULL DEFAULT 'home',
+    sort_order INT NOT NULL DEFAULT 0,
+    status VARCHAR(40) NOT NULL DEFAULT 'published',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_faqs_page_status (page_slug, status, sort_order)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS seo_meta (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    page_slug VARCHAR(180) NOT NULL UNIQUE,
+    meta_title VARCHAR(180) NOT NULL,
+    meta_description VARCHAR(320) NOT NULL,
+    canonical_url VARCHAR(255) NULL,
+    og_title VARCHAR(180) NULL,
+    og_description VARCHAR(320) NULL,
+    og_image VARCHAR(255) NULL,
+    twitter_title VARCHAR(180) NULL,
+    twitter_description VARCHAR(320) NULL,
+    schema_json LONGTEXT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_seo_page_slug (page_slug)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS leads (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(160) NULL,
+    phone VARCHAR(40) NOT NULL,
+    company VARCHAR(160) NULL,
+    service_interest VARCHAR(160) NULL,
+    project_budget VARCHAR(80) NULL,
+    message TEXT NOT NULL,
+    source_page VARCHAR(180) NULL,
+    ip_address VARCHAR(60) NULL,
+    user_agent VARCHAR(255) NULL,
+    status VARCHAR(40) NOT NULL DEFAULT 'new',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_leads_status (status),
+    INDEX idx_leads_created_at (created_at),
+    INDEX idx_leads_source_page (source_page)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS contact_requests (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    phone VARCHAR(40) NOT NULL,
+    email VARCHAR(160) NULL,
+    message TEXT NOT NULL,
+    status VARCHAR(40) NOT NULL DEFAULT 'new',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_contact_status (status),
+    INDEX idx_contact_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS settings (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    setting_key VARCHAR(120) NOT NULL UNIQUE,
+    setting_value TEXT NULL,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

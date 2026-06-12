@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@source "../../app/**/*.php";
+@source "../../public/**/*.php";
+@source "../../public/assets/js/**/*.js";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-red: #dc2626;
+  --color-brand-dark: #111827;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 3px solid #dc2626;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply rounded px-3 py-2 text-sm font-bold text-slate-700 transition hover:bg-red-50 hover:text-red-700;
+  }
+
+  .nav-link-active {
+    @apply bg-red-50 text-red-700;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center rounded bg-red-600 font-extrabold text-white shadow-sm transition hover:bg-red-700 focus-visible:outline-red-600;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center rounded border border-white/30 bg-white/10 font-extrabold text-white transition hover:bg-white/20;
+  }
+
+  .section {
+    @apply py-16 lg:py-24;
+  }
+
+  .inner-hero {
+    @apply bg-slate-950 bg-[radial-gradient(circle_at_20%_20%,rgba(220,38,38,.35),transparent_32%),linear-gradient(135deg,#111827,#020617)];
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-red-600;
+  }
+
+  .section-title {
+    @apply mt-3 font-heading text-3xl font-extrabold leading-tight text-slate-950 lg:text-5xl;
+  }
+
+  .feature-card {
+    @apply rounded-lg border border-slate-200 bg-white p-5 shadow-sm;
+  }
+
+  .feature-card h2,
+  .feature-card h3 {
+    @apply font-heading text-xl font-bold text-slate-950;
+  }
+
+  .feature-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .service-card {
+    @apply rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-red-200 hover:shadow-xl;
+  }
+
+  .service-card h2,
+  .service-card h3 {
+    @apply mt-4 font-heading text-2xl font-bold text-slate-950;
+  }
+
+  .service-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .service-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded bg-red-600 font-heading text-lg font-extrabold text-white;
+  }
+
+  .process-card {
+    @apply rounded-lg border border-slate-200 bg-white p-5 shadow-sm;
+  }
+
+  .process-card span {
+    @apply font-heading text-3xl font-extrabold text-red-600;
+  }
+
+  .process-card h3 {
+    @apply mt-4 font-heading text-xl font-bold text-slate-950;
+  }
+
+  .process-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .prose-content {
+    @apply max-w-none text-slate-700;
+  }
+
+  .prose-content p {
+    @apply mb-5 leading-8;
+  }
+
+  .prose-content h2 {
+    @apply mb-4 mt-10 font-heading text-3xl font-extrabold leading-tight text-slate-950;
+  }
+
+  .prose-content h3 {
+    @apply mb-3 mt-8 font-heading text-2xl font-bold text-slate-950;
+  }
+
+  .prose-content a {
+    @apply font-bold text-red-600 underline decoration-red-200 underline-offset-4 hover:text-red-700;
+  }
+
+  .faq-item summary {
+    @apply cursor-pointer list-none font-heading text-lg font-bold text-slate-950;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .form-field {
+    @apply grid gap-2 text-sm font-bold text-slate-800;
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    @apply w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-sm font-medium text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-red-500 focus:ring-4 focus:ring-red-100;
+  }
+
+  .filter-btn {
+    @apply rounded border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700;
+  }
+
+  .filter-btn.is-active {
+    @apply border-red-600 bg-red-600 text-white;
+  }
+
+  .footer-title {
+    @apply font-heading text-lg font-bold text-white;
+  }
+
+  .admin-table {
+    @apply min-w-full divide-y divide-slate-200 text-left text-sm;
+  }
+
+  .admin-table th {
+    @apply whitespace-nowrap bg-slate-50 px-4 py-3 font-extrabold uppercase tracking-[0.12em] text-slate-500;
+  }
+
+  .admin-table td {
+    @apply max-w-xs whitespace-nowrap border-t border-slate-100 px-4 py-3 text-slate-700;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 700ms ease both;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <article>
-    <section class="inner-hero">
+    <section class="inner-hero" style="<?= hero_background_style($blog['image'], 'center right') ?>">
         <div class="mx-auto max-w-4xl px-4 py-20 lg:px-6">
             <p class="eyebrow text-red-300"><?= e($blog['category']) ?> · <?= e(date('d M Y', strtotime($blog['published_at']))) ?></p>
             <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl"><?= e($blog['title']) ?></h1>
@@ -14,7 +14,7 @@
                 <div class="prose-content text-lg">
                     <?= $blog['content'] ?>
                     <h2>How Digi CNC applies this in production</h2>
-                    <p>Digi CNC uses this practical approach across 2D CNC cutting, 3D CNC carving, decorative jali cutting, MDF CNC cutting, HDHMR CNC cutting, parametric manufacturing and custom CNC projects. The goal is to help clients prepare better inputs, select the right material and reduce avoidable production corrections.</p>
+                    <p>On real projects, Digi CNC applies this guidance by checking drawings, material behavior, thickness, pattern strength, finish expectations and assembly context before machining. The goal is to help clients prepare better inputs, select the right material and reduce avoidable production corrections.</p>
                     <p>For project guidance, share your drawing, dimensions, material, quantity and timeline. The team will review the details and suggest the most suitable CNC route.</p>
                 </div>
             </div>

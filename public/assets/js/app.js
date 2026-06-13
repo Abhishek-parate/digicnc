@@ -10,6 +10,48 @@
     });
   }
 
+  const heroSlider = $('[data-hero-slider]');
+  if (heroSlider) {
+    const slides = $$('[data-hero-slide]', heroSlider);
+    const copies = $$('[data-hero-copy]', heroSlider);
+    const dots = $$('[data-hero-dot]', heroSlider);
+    let activeSlide = 0;
+    let sliderTimer;
+
+    const showSlide = (index) => {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('hero-slide-active', slideIndex === activeSlide);
+      });
+      copies.forEach((copy, copyIndex) => {
+        copy.classList.toggle('hero-copy-active', copyIndex === activeSlide);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('hero-dot-active', dotIndex === activeSlide);
+      });
+    };
+
+    const startSlider = () => {
+      if (slides.length < 2) return;
+      sliderTimer = window.setInterval(() => showSlide(activeSlide + 1), 5200);
+    };
+
+    const stopSlider = () => {
+      if (sliderTimer) window.clearInterval(sliderTimer);
+    };
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        stopSlider();
+        showSlide(Number(dot.dataset.heroDot || 0));
+        startSlider();
+      });
+    });
+    heroSlider.addEventListener('mouseenter', stopSlider);
+    heroSlider.addEventListener('mouseleave', startSlider);
+    startSlider();
+  }
+
   const counters = $$('[data-counter]');
   if (counters.length) {
     const animateCounter = (element) => {

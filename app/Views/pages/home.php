@@ -1,15 +1,32 @@
-<?php $company = $repo->company(); ?>
-<section class="relative isolate overflow-hidden bg-slate-950 text-white">
-    <img class="absolute inset-0 -z-10 h-full w-full object-cover opacity-45" src="<?= e(asset_url('assets/images/hero-cnc-workshop.png')) ?>" alt="CNC cutting service in Nagpur workshop by Digi CNC" fetchpriority="high">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/30"></div>
-    <div class="mx-auto grid min-h-[720px] max-w-7xl content-center gap-10 px-4 py-20 lg:grid-cols-[1.05fr_.95fr] lg:px-6">
-        <div>
-            <p class="eyebrow text-red-300">Digi CNC Nagpur - 2D & 3D CNC Cutting & Carving</p>
-            <h1 class="mt-5 max-w-4xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">Premium CNC Cutting, Carving, Jali and Parametric Manufacturing in Nagpur</h1>
-            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Digi CNC helps architects, interior designers, furniture manufacturers, contractors, prototype teams, artists and homeowners convert drawings into clean CNC-manufactured parts. From MDF jali panels and HDHMR furniture components to 3D carved wall panels and parametric design installations, the work is planned for accuracy, finish and real-world assembly.</p>
+<?php $company = $repo->company(); $heroSlides = $repo->heroSlides(); ?>
+<section class="hero-slider relative isolate overflow-hidden bg-slate-950 text-white" data-hero-slider>
+    <div class="absolute inset-0 -z-10">
+        <?php foreach ($heroSlides as $index => $slide): ?>
+            <img class="hero-slide <?= $index === 0 ? 'hero-slide-active' : '' ?>" data-hero-slide="<?= e($index) ?>" src="<?= e(asset_url($slide['image'])) ?>" alt="<?= e($slide['alt']) ?>" <?= $index === 0 ? 'fetchpriority="high"' : 'loading="lazy"' ?>>
+        <?php endforeach; ?>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(50,46,161,.34),transparent_34%),linear-gradient(90deg,rgba(5,5,9,.96)_0%,rgba(5,5,9,.88)_44%,rgba(5,5,9,.56)_100%)]"></div>
+    </div>
+    <div class="mx-auto grid min-h-[760px] max-w-7xl content-center gap-10 px-4 py-20 lg:grid-cols-[1.05fr_.95fr] lg:px-6">
+        <div class="relative">
+            <?php foreach ($heroSlides as $index => $slide): ?>
+                <div class="hero-copy <?= $index === 0 ? 'hero-copy-active' : '' ?>" data-hero-copy="<?= e($index) ?>">
+                    <p class="eyebrow text-red-300"><?= e($slide['eyebrow']) ?></p>
+                    <?php if ($index === 0): ?>
+                        <h1 class="mt-5 max-w-4xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"><?= e($slide['title']) ?></h1>
+                    <?php else: ?>
+                        <h2 class="mt-5 max-w-4xl font-heading text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"><?= e($slide['title']) ?></h2>
+                    <?php endif; ?>
+                    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200"><?= e($slide['copy']) ?></p>
+                </div>
+            <?php endforeach; ?>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a class="btn-primary px-6 py-3" href="<?= e(app_url('contact-us')) ?>">Get CNC Quote</a>
                 <a class="btn-secondary px-6 py-3" href="<?= e(app_url('gallery')) ?>">View Project Gallery</a>
+            </div>
+            <div class="mt-6 flex gap-3" aria-label="Hero slider controls">
+                <?php foreach ($heroSlides as $index => $slide): ?>
+                    <button class="hero-dot <?= $index === 0 ? 'hero-dot-active' : '' ?>" type="button" data-hero-dot="<?= e($index) ?>" aria-label="Show slide <?= e($index + 1) ?>"></button>
+                <?php endforeach; ?>
             </div>
             <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <?php foreach ($repo->stats() as $stat): ?>
@@ -20,7 +37,7 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="self-end rounded-lg border border-white/15 bg-white/95 p-5 text-slate-900 shadow-2xl">
+        <div class="self-end rounded-lg border border-white/15 bg-white/95 p-5 text-slate-900 shadow-2xl backdrop-blur">
             <p class="font-heading text-2xl font-bold">Send Drawing or Requirement</p>
             <p class="mt-2 text-sm leading-6 text-slate-600">Share material, size, quantity, file status and timeline. The Digi CNC team will review the feasibility and guide the next step.</p>
             <div class="mt-5"><?php $this->partial('partials/contact-form', ['repo' => $repo, 'compact' => true]); ?></div>
@@ -82,9 +99,9 @@
             <p class="mt-5 leading-8 text-slate-600">The same CNC file can perform very differently in two materials. MDF is often selected for painted decorative panels, interior jali and carved surfaces because it offers a consistent face and economical machining. HDHMR is chosen when moisture resistance, density and durability matter for kitchens, wardrobes and commercial furniture. Natural wood is valued for warmth, grain and premium carving. Acrylic helps with signage, display work and clean modern panels. ACP and WPC support exterior-adjacent or commercial requirements when used with the right design details. Digi CNC helps clients avoid material assumptions that look good on paper but fail during cutting, finishing or installation.</p>
             <p class="mt-4 leading-8 text-slate-600">For every project, material thickness, sheet size, edge quality, finishing method, fastener strategy and pattern strength are considered together. This is especially important for decorative jali, mandir panels, parametric ribs, furniture components and prototype work where one weak detail can affect the final result.</p>
         </div>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div class="grid content-start grid-cols-2 gap-3 sm:grid-cols-3">
             <?php foreach ($repo->materials() as $material): ?>
-                <div class="rounded-md border border-slate-200 bg-slate-50 p-4 text-center font-bold text-slate-800 shadow-sm"><?= e($material) ?></div>
+                <div class="rounded-md border border-slate-200 bg-slate-50 px-4 py-5 text-center text-sm font-bold text-slate-800 shadow-sm transition hover:border-red-200 hover:bg-red-50"><?= e($material) ?></div>
             <?php endforeach; ?>
         </div>
     </div>

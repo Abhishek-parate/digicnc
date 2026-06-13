@@ -1,7 +1,7 @@
 <?php
 $categories = array_values(array_unique(array_map(fn (array $item): string => $item['category'], $repo->gallery())));
 ?>
-<section class="inner-hero">
+<section class="inner-hero" style="<?= hero_background_style('assets/images/hero-slider-jali-cnc-clean.png', 'center right') ?>">
     <div class="mx-auto max-w-7xl px-4 py-20 lg:px-6">
         <p class="eyebrow text-red-300">Project Gallery</p>
         <h1 class="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl">CNC Cutting, Carving, Jali, Furniture Components and Custom Project Gallery</h1>

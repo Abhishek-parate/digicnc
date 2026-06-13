@@ -31,7 +31,7 @@ unset($_SESSION['flash']);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= e(asset_url('assets/css/app.css')) ?>">
+    <link rel="stylesheet" href="<?= e(versioned_asset_url('assets/css/app.css')) ?>">
     <?php foreach (($schemas ?? []) as $schema): ?>
         <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
     <?php endforeach; ?>
@@ -161,9 +161,9 @@ unset($_SESSION['flash']);
         </div>
     </footer>
 
-    <a class="fixed bottom-5 right-5 z-40 rounded-full bg-emerald-500 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-emerald-600 md:bottom-auto md:top-24" href="https://wa.me/<?= e($company['whatsapp']) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation." target="_blank" rel="noopener" aria-label="WhatsApp Digi CNC">WhatsApp</a>
-    <a class="fixed bottom-20 right-5 z-40 rounded-full bg-red-600 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-red-700 md:bottom-auto md:top-40" href="tel:+919766653376" aria-label="Call Digi CNC">Call</a>
+    <a class="fixed right-4 top-20 z-40 rounded-full bg-emerald-500 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-emerald-600 md:right-5 md:top-24" href="https://wa.me/<?= e($company['whatsapp']) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation." target="_blank" rel="noopener" aria-label="WhatsApp Digi CNC">WhatsApp</a>
+    <a class="fixed right-[7.6rem] top-20 z-40 rounded-full bg-red-600 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-red-700 md:right-5 md:top-40" href="tel:+919766653376" aria-label="Call Digi CNC">Call</a>
 
-    <script src="<?= e(asset_url('assets/js/app.js')) ?>" defer></script>
+    <script src="<?= e(versioned_asset_url('assets/js/app.js')) ?>" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php $company = $repo->company(); ?>
-<section class="inner-hero">
+<section class="inner-hero" style="<?= hero_background_style('assets/images/banner-about-process-clean.png', 'center right') ?>">
     <div class="mx-auto max-w-7xl px-4 py-20 lg:px-6">
         <p class="eyebrow text-red-300">About Digi CNC</p>
         <h1 class="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl">A Nagpur CNC manufacturing company built around precision, clarity and useful production advice.</h1>
@@ -12,7 +12,7 @@
         <div>
             <p class="eyebrow">Company Story</p>
             <h2 class="section-title">From drawings and material sheets to reliable CNC output.</h2>
-            <img class="mt-6 rounded-lg object-cover shadow-lg" src="<?= e(asset_url('assets/images/hero-cnc-workshop.png')) ?>" loading="lazy" alt="Digi CNC Nagpur CNC cutting workshop">
+            <img class="mt-6 rounded-lg object-cover shadow-lg" src="<?= e(asset_url('assets/images/banner-about-process-clean.png')) ?>" loading="lazy" alt="Digi CNC Nagpur CNC cutting process and material planning">
         </div>
         <div class="prose-content">
             <p>Digi CNC was created to solve a common problem in the interior and manufacturing market: clients had creative ideas, digital drawings or urgent production requirements, but they needed a CNC partner who could speak both design and execution. A drawing may look correct on screen, but CNC production asks practical questions. Is the profile closed? Is the pattern strong enough? Is the material suitable? Will the edge finish meet expectations? Can the parts be nested efficiently? Will the panel survive transport and installation? These questions shaped the working style of Digi CNC from the beginning.</p>

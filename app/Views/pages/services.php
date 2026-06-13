@@ -1,4 +1,4 @@
-<section class="inner-hero">
+<section class="inner-hero" style="<?= hero_background_style('assets/images/banner-services-materials-clean.png', 'center right') ?>">
     <div class="mx-auto max-w-7xl px-4 py-20 lg:px-6">
         <p class="eyebrow text-red-300">CNC Services</p>
         <h1 class="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl">2D CNC Cutting, 3D CNC Carving, Jali, MDF, HDHMR and Custom CNC Projects in Nagpur</h1>

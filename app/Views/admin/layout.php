@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title><?= e($title ?? 'Admin') ?> | Digi CNC</title>
-    <link rel="stylesheet" href="<?= e(asset_url('assets/css/app.css')) ?>">
+    <link rel="stylesheet" href="<?= e(versioned_asset_url('assets/css/app.css')) ?>">
 </head>
 <body class="bg-slate-100 text-slate-900">
     <div class="min-h-screen lg:flex">
@@ -33,6 +33,6 @@
             <?= $content ?>
         </main>
     </div>
-    <script src="<?= e(asset_url('assets/js/app.js')) ?>" defer></script>
+    <script src="<?= e(versioned_asset_url('assets/js/app.js')) ?>" defer></script>
 </body>
 </html>

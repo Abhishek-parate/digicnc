@@ -65,12 +65,22 @@ function full_url(string $path = ''): string
 
 function asset_url(string $path): string
 {
-    $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-    $assetPath = str_contains($script, '/public/index.php')
-        ? app_base_path() . '/public/' . ltrim($path, '/')
-        : app_base_path() . '/' . ltrim($path, '/');
+    return app_base_path() . '/' . ltrim($path, '/');
+}
 
-    return $assetPath;
+function versioned_asset_url(string $path): string
+{
+    $url = asset_url($path);
+    $file = BASE_PATH . '/public/' . ltrim($path, '/');
+    $version = is_file($file) ? (string) filemtime($file) : (string) time();
+
+    return $url . (str_contains($url, '?') ? '&' : '?') . 'v=' . $version;
+}
+
+function hero_background_style(string $image, string $position = 'center'): string
+{
+    $url = asset_url($image);
+    return "background-image: linear-gradient(90deg, rgba(5,5,9,.94) 0%, rgba(24,19,95,.82) 48%, rgba(5,5,9,.62) 100%), url('" . e($url) . "'); background-position: " . e($position) . ';';
 }
 
 function is_active(string $path): bool

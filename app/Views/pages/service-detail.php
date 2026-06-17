@@ -1,36 +1,46 @@
-<section class="relative isolate overflow-hidden bg-slate-950 text-white">
-    <img class="absolute inset-0 -z-10 h-full w-full object-cover opacity-35" src="<?= e(asset_url($service['image'])) ?>" alt="<?= e($service['title']) ?> by Digi CNC Nagpur" fetchpriority="high">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-950/40"></div>
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-20 lg:grid-cols-[1fr_.8fr] lg:px-6">
-        <div>
-            <p class="eyebrow text-red-300"><?= e($service['keyword']) ?></p>
-            <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-6xl"><?= e($service['h1']) ?></h1>
-            <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-200"><?= e($service['summary']) ?></p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a class="btn-primary px-6 py-3" href="#quote">Request Quote</a>
-                <a class="btn-secondary px-6 py-3" href="tel:+919766653376">Call +91 9766653376</a>
-            </div>
+<section
+    style="
+        height:400px;
+        overflow:hidden;
+    "
+>
+    <img
+        style="
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        "
+        src="<?= e(asset_url($service['image'])) ?>"
+        alt="<?= e($service['title']) ?>"
+    >
+</section>
+<section class="section bg-white">
+    <div class="mx-auto max-w-7xl gap-10 px-4 lg">
+            <p class="eyebrow mt-1 text-red-500"><?= e($service['keyword']) ?></p>
+           <h1 class="mt-2 font-heading text-4xl font-extrabold leading-tight lg:text-4xl"><?= e($service['title']) ?></h1>
+           <article class="prose-content text-justify">
+            <p class="mt-3 mb-5 max-w-7xl text-lg leading-8 text-slate-900"><?= e($service['summary']) ?></p>
         </div>
-        <div class="rounded-lg border border-white/15 bg-white/10 p-6 backdrop-blur">
-            <h2 class="font-heading text-2xl font-bold">Best For</h2>
-            <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        <div class="relative rounded-4xl border border-white/15 bg-white/10 mx-auto max-w-7xl gap-10 px-4 p-8 px-4 backdrop-blur">
+            <h2 class="font-heading text-2xl mt-4 font-bold">Best For</h2>
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
                 <?php foreach ($service['applications'] as $application): ?>
-                    <span class="rounded border border-white/15 bg-white/10 px-3 py-2 text-sm font-semibold"><?= e($application) ?></span>
+                    <span class="rounded-2xl border border-slate-900 bg-white/10 px-3 py-2 text-sm font-semibold"><?= e($application) ?></span>
                 <?php endforeach; ?>
             </div>
             <h2 class="mt-8 font-heading text-2xl font-bold">Materials</h2>
-            <div class="mt-5 flex flex-wrap gap-2">
+            <div class="mt-3 mb-2 flex flex-wrap gap-2">
                 <?php foreach ($service['materials'] as $material): ?>
-                    <span class="rounded bg-white px-3 py-2 text-sm font-bold text-slate-950"><?= e($material) ?></span>
+                    <span class="rounded-2xl border border-slate-900 bg-white/10 px-3 py-2 text-sm font-bold text-slate-950"><?= e($material) ?></span>
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
 </section>
-
-<section class="section bg-white">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6">
-        <article class="prose-content">
+<div class="h-8 bg-gradient-to-b from-slate-950 to-white"></div>
+<section class="section bg-white  pt-4">
+   <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6" style="align-items: start;">
+        <article class="prose-content text-justify">
             <p class="eyebrow">Service Overview</p>
             <h2 class="section-title"><?= e($service['title']) ?> with design-aware manufacturing support.</h2>
             <p><?= e($service['summary']) ?> This service is built for clients who need more than a simple machine run. A CNC project has to move from idea or drawing into a physical part that can be handled, finished, assembled and installed. Digi CNC reviews the file, material, thickness, pattern, quantity, use case and expected finish before recommending the best production path.</p>
@@ -71,9 +81,14 @@
             <p>Many projects need more than one CNC capability. A decorative project may combine <a href="<?= e(app_url('decorative-jali-cutting-nagpur')) ?>">decorative jali cutting in Nagpur</a> with <a href="<?= e(app_url('mdf-cnc-cutting-nagpur')) ?>">MDF CNC cutting</a>. A premium interior may require <a href="<?= e(app_url('3d-cnc-carving-nagpur')) ?>">3D CNC carving</a> along with <a href="<?= e(app_url('parametric-design-nagpur')) ?>">parametric design manufacturing</a>. Furniture production may combine <a href="<?= e(app_url('2d-cnc-cutting-nagpur')) ?>">2D CNC cutting</a> and <a href="<?= e(app_url('hdhmr-cnc-cutting-nagpur')) ?>">HDHMR CNC cutting</a>. For unique ideas, visit <a href="<?= e(app_url('custom-cnc-projects')) ?>">custom CNC projects</a> or the broader <a href="<?= e(app_url('services')) ?>">CNC services page</a>.</p>
         </article>
 
-        <aside class="space-y-5">
-            <div id="quote" class="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
-                <h2 class="font-heading text-2xl font-bold">Get a Quote</h2>
+
+     <aside
+class="space-y-5 sticky self-start"
+style="
+    top: 120px;
+">
+            <div id="quote" class="rounded-lg border border-slate-200 bg-slate-50 p-3 shadow-sm">
+                <h2 class="font-heading text-xl font-bold">Get a Quote</h2>
                 <p class="mt-2 text-sm leading-7 text-slate-600">Share drawing, material, thickness, quantity and timeline for <?= e($service['title']) ?>.</p>
                 <div class="mt-5"><?php $this->partial('partials/contact-form', ['repo' => $repo, 'selectedService' => $service['title'], 'compact' => true]); ?></div>
             </div>

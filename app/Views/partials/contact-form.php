@@ -2,34 +2,64 @@
 $selectedService = $selectedService ?? '';
 $compact = $compact ?? false;
 ?>
-<form class="lead-form grid gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm" action="<?= e(app_url('lead')) ?>" method="post" novalidate>
+<form class="lead-form grid gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm" action="<?= e(app_url('lead')) ?>" method="post">
     <?= csrf_field() ?>
     <input type="hidden" name="source_page" value="<?= e(trim((string) ($_GET['path'] ?? ''), '/') ?: '') ?>">
     <label class="hidden">Website <input type="text" name="website" autocomplete="off" tabindex="-1"></label>
     <div class="grid gap-4 sm:grid-cols-2">
         <label class="form-field">
             <span>Name *</span>
-            <input name="name" required autocomplete="name" placeholder="Your name">
+           <input
+    type="text"
+    name="name"
+    required
+    minlength="3"
+    maxlength="50"
+    pattern="[A-Za-z ]+"
+    title="Name should contain only letters"
+    autocomplete="name"
+    placeholder="Your name"
+>
         </label>
         <label class="form-field">
             <span>Phone *</span>
-            <input name="phone" required autocomplete="tel" placeholder="+91">
+            <input
+    type="tel"
+    name="phone"
+    required
+    pattern="[6-9][0-9]{9}"
+    maxlength="10"
+    inputmode="numeric"
+    autocomplete="tel"
+    placeholder="+91"
+    title="Enter a valid 10 digit mobile number"
+>
         </label>
     </div>
     <div class="grid gap-4 sm:grid-cols-2">
         <label class="form-field">
             <span>Email</span>
-            <input type="email" name="email" autocomplete="email" placeholder="name@example.com">
+           <input
+    type="email"
+    name="email"
+    autocomplete="email"
+    placeholder="name@example.com"
+>
         </label>
         <label class="form-field">
             <span>Company / Studio</span>
-            <input name="company" autocomplete="organization" placeholder="Optional">
+            <input
+    type="text"
+    name="company"
+    autocomplete="organization"
+    placeholder="Optional"
+>
         </label>
     </div>
     <div class="grid gap-4 sm:grid-cols-2">
         <label class="form-field">
             <span>Service Interest</span>
-            <select name="service_interest">
+            <select name="service_interest" required>
                 <option value="">Select service</option>
                 <?php foreach ($repo->services() as $service): ?>
                     <option value="<?= e($service['name']) ?>" <?= $selectedService === $service['name'] ? 'selected' : '' ?>><?= e($service['name']) ?></option>

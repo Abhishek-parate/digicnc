@@ -56,7 +56,7 @@ $compact = $compact ?? false;
 >
         </label>
     </div>
-    <div class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-4 sm:grid-cols-1">
         <label class="form-field">
             <span>Service Interest</span>
             <select name="service_interest" required>

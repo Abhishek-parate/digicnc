@@ -14,22 +14,22 @@
         alt="<?= e($service['title']) ?>"
     >
 </section>
-<section class="section bg-white">
+<section>
     <div class="mx-auto max-w-7xl gap-10 px-4 lg">
-            <p class="eyebrow mt-1 text-red-500"><?= e($service['keyword']) ?></p>
-           <h1 class="mt-2 font-heading text-4xl font-extrabold leading-tight lg:text-4xl"><?= e($service['title']) ?></h1>
+            <p class="eyebrow mt-12 text-red-500"><?= e($service['keyword']) ?></p>
+           <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl"><?= e($service['title']) ?></h1>
            <article class="prose-content text-justify">
             <p class="mt-3 mb-5 max-w-7xl text-lg leading-8 text-slate-900"><?= e($service['summary']) ?></p>
         </div>
-        <div class="relative rounded-4xl border border-white/15 bg-white/10 mx-auto max-w-7xl gap-10 px-4 p-8 px-4 backdrop-blur">
+        <div class="relative rounded-4xl border border-white/15 bg-white/10 mx-auto max-w-7xl gap-10 px-4 p-8 backdrop-blur">
             <h2 class="font-heading text-2xl mt-4 font-bold">Best For</h2>
-            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+          <div class="mt-5 grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 <?php foreach ($service['applications'] as $application): ?>
                     <span class="rounded-2xl border border-slate-900 bg-white/10 px-3 py-2 text-sm font-semibold"><?= e($application) ?></span>
                 <?php endforeach; ?>
             </div>
             <h2 class="mt-8 font-heading text-2xl font-bold">Materials</h2>
-            <div class="mt-3 mb-2 flex flex-wrap gap-2">
+            <div class="mt-3 mb-8 flex flex-wrap gap-2">
                 <?php foreach ($service['materials'] as $material): ?>
                     <span class="rounded-2xl border border-slate-900 bg-white/10 px-3 py-2 text-sm font-bold text-slate-950"><?= e($material) ?></span>
                 <?php endforeach; ?>
@@ -37,12 +37,12 @@
         </div>
     </div>
 </section>
-<div class="h-8 bg-gradient-to-b from-slate-950 to-white"></div>
-<section class="section bg-white  pt-4">
-   <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6" style="align-items: start;">
+<div class="h-8 mt-4 sbg-gradient-to-b from-slate-950 to-white"></div>
+<section>
+   <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6" style="align-items: start;">
         <article class="prose-content text-justify">
             <p class="eyebrow">Service Overview</p>
-            <h2 class="section-title"><?= e($service['title']) ?> with design-aware manufacturing support.</h2>
+            <h2 class="section-title mt-1"><?= e($service['title']) ?> with design-aware manufacturing support.</h2>
             <p><?= e($service['summary']) ?> This service is built for clients who need more than a simple machine run. A CNC project has to move from idea or drawing into a physical part that can be handled, finished, assembled and installed. Digi CNC reviews the file, material, thickness, pattern, quantity, use case and expected finish before recommending the best production path.</p>
             <p>In Nagpur and across Maharashtra, CNC buyers often come from very different backgrounds. Architects may send a feature-wall concept, designers may share a jali pattern, furniture manufacturers may need repeat components, contractors may need quick production support, artists may need relief detail, prototype companies may need a functional sample and homeowners may need a custom mandir or panel. Digi CNC keeps the conversation practical for each buyer. The aim is to protect the design intent while reducing avoidable mistakes at the manufacturing stage.</p>
             <p>The strongest CNC outcomes happen when the drawing, material and final application are aligned. A pattern that works beautifully in MDF may need changes in acrylic. A 3D surface may need extra depth, but the chosen board may limit what can be carved safely. A furniture component may look correct, but without hardware references it may create assembly problems later. A parametric panel may need part numbering so the site team can install it efficiently. Digi CNC brings these details into the discussion before production.</p>
@@ -85,7 +85,7 @@
      <aside
 class="space-y-5 sticky self-start"
 style="
-    top: 120px;
+    top: 80px;
 ">
             <div id="quote" class="rounded-lg border border-slate-200 bg-slate-50 p-3 shadow-sm">
                 <h2 class="font-heading text-xl font-bold">Get a Quote</h2>

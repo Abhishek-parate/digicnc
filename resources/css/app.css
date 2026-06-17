@@ -100,7 +100,7 @@
   }
 
   .section-title {
-    @apply mt-3 font-heading text-3xl font-extrabold leading-tight text-slate-950 lg:text-5xl;
+    @apply mt-0.5 font-heading text-3xl font-extrabold leading-tight text-slate-950 lg:text-5xl;
   }
 
   .feature-card {

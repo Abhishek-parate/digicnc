@@ -45,30 +45,41 @@
     </div>
 </section>
 
+
+<!-- WHY CHOOSE -->
 <section class="section bg-white">
-    <div class="mx-auto max-w-7xl px-4 lg:px-6">
-        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
-            <div>
-                <p class="eyebrow">Why Choose Digi CNC</p>
-                <h2 class="section-title">A manufacturing partner for design-led CNC work, not just a cutting vendor.</h2>
-                <p class="mt-5 leading-8 text-slate-600">CNC work can look simple from the outside: load a file, clamp a sheet, run a machine. In practice, the best output depends on a chain of decisions made before the router starts. Digi CNC studies the drawing, material, thickness, pattern strength, edge quality, finish plan and intended use. That is why the company is useful for both B2B production work and B2C custom projects. A furniture contractor may need repeatable parts with clean labels. An architect may need a parametric surface that can actually be assembled. A homeowner may need a mandir jali that looks detailed but does not become fragile. Each case requires different judgment.</p>
-                <p class="mt-4 leading-8 text-slate-600">Founded by Mr. Krunal Patel and backed by more than five years of hands-on CNC experience, Digi CNC serves Nagpur and Maharashtra with practical production thinking. The team works across MDF, HDHMR, wood, acrylic, PVC, ACP, WPC, plywood and decorative laminates. The result is a service that feels premium because the basics are treated seriously: file preparation, tool choice, material support, clean cutting strategy, review before machining, communication during production and sensible delivery expectations.</p>
-            </div>
-            <div class="grid gap-4 sm:grid-cols-2">
-                <?php foreach ([
-                    ['title' => 'Drawing-First Review', 'body' => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.'],
-                    ['title' => 'Material-Aware Machining', 'body' => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.'],
-                    ['title' => 'B2B + B2C Support', 'body' => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.'],
-                    ['title' => 'Conversion-Focused Guidance', 'body' => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.'],
-                ] as $item): ?>
-                    <article class="feature-card">
-                        <h3><?= e($item['title']) ?></h3>
-                        <p><?= e($item['body']) ?></p>
-                    </article>
-                <?php endforeach; ?>
-            </div>
+  <div class="mx-auto max-w-7xl px-4 lg:px-6">
+    <div class="grid gap-14 lg:grid-cols-2 lg:gap-20">
+
+      <div>
+        <p class="eyebrow">Why Choose Digi CNC</p>
+        <h2 class="section-title">A manufacturing partner for design-led CNC work, not just a cutting vendor.</h2>
+        <p class="mt-5 text-[0.95rem] leading-8 text-slate-600">CNC work can look simple from the outside: load a file, clamp a sheet, run a machine. In practice, the best output depends on a chain of decisions made before the router starts. Digi CNC studies the drawing, material, thickness, pattern strength, edge quality, finish plan and intended use. That is why the company is useful for both B2B production work and B2C custom projects. A furniture contractor may need repeatable parts with clean labels. An architect may need a parametric surface that can actually be assembled. A homeowner may need a mandir jali that looks detailed but does not become fragile. Each case requires different judgment.</p>
+        <p class="mt-4 text-[0.95rem] leading-8 text-slate-600">Founded by Mr. Krunal Patel and backed by more than five years of hands-on CNC experience, Digi CNC serves Nagpur and Maharashtra with practical production thinking. The team works across MDF, HDHMR, wood, acrylic, PVC, ACP, WPC, plywood and decorative laminates. The result is a service that feels premium because the basics are treated seriously: file preparation, tool choice, material support, clean cutting strategy, review before machining, communication during production and sensible delivery expectations.</p>
+        <div class="mt-7 flex flex-wrap gap-2">
+          <?php foreach (['5+ Years Experience', 'Nagpur & Maharashtra', 'B2B + B2C Ready', '10+ Materials'] as $tag): ?>
+            <span class="tag-pill"><?= e($tag) ?></span>
+          <?php endforeach; ?>
         </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <?php foreach ([
+          ['num' => '01', 'title' => 'Drawing-First Review',       'body' => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.'],
+          ['num' => '02', 'title' => 'Material-Aware Machining',   'body' => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.'],
+          ['num' => '03', 'title' => 'B2B + B2C Support',         'body' => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.'],
+          ['num' => '04', 'title' => 'Conversion-Focused Guidance','body' => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.'],
+        ] as $item): ?>
+          <article class="feature-card">
+            <span class="feature-num"><?= e($item['num']) ?></span>
+            <h3 class="mt-3 font-heading text-[1rem] font-bold text-slate-900"><?= e($item['title']) ?></h3>
+            <p class="mt-2 text-[0.82rem] leading-7 text-slate-600"><?= e($item['body']) ?></p>
+          </article>
+        <?php endforeach; ?>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <section class="section bg-slate-50">

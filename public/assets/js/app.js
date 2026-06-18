@@ -140,4 +140,111 @@
         .replace(/(^-|-$)/g, '');
     });
   });
+
+  $$('.lead-form').forEach((leadForm) => {
+    const fieldConfig = {
+      name: { required: true },
+      phone: { required: true },
+      email: { required: false },
+      message: { required: true }
+    };
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^(\+?91[-\s]?)?[6-9]\d{9}$/;
+    const namePattern = /^[A-Za-z\s.'-]{2,60}$/;
+
+    const getField = (key) => leadForm.querySelector(`[name="${key}"]`);
+    const getErrorEl = (key) => leadForm.querySelector(`[data-error-for="${key}"]`);
+
+    const showError = (key, message) => {
+      const field = getField(key);
+      const errorEl = getErrorEl(key);
+      if (field) field.style.borderColor = '#dc2626';
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.classList.remove('hidden');
+      }
+    };
+
+    const clearError = (key) => {
+      const field = getField(key);
+      const errorEl = getErrorEl(key);
+      if (field) field.style.borderColor = '';
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+      }
+    };
+
+    const validateField = (key) => {
+      const config = fieldConfig[key];
+      const field = getField(key);
+      if (!config || !field) return true;
+
+      const value = field.value.trim();
+
+      if (config.required && value === '') {
+        showError(key, 'This field is required.');
+        return false;
+      }
+
+      if (key === 'name' && value !== '' && !namePattern.test(value)) {
+        showError(key, 'Enter a valid name (letters only).');
+        return false;
+      }
+
+      if (key === 'phone' && value !== '' && !phonePattern.test(value.replace(/[\s-]/g, ''))) {
+        showError(key, 'Enter a valid 10-digit phone number.');
+        return false;
+      }
+
+      if (key === 'email' && value !== '' && !emailPattern.test(value)) {
+        showError(key, 'Enter a valid email address.');
+        return false;
+      }
+
+      if (key === 'message' && config.required && value.length < 10) {
+        showError(key, 'Please add a few more details about your requirement.');
+        return false;
+      }
+
+      clearError(key);
+      return true;
+    };
+
+    Object.keys(fieldConfig).forEach((key) => {
+      const field = getField(key);
+      if (!field) return;
+      field.addEventListener('blur', () => validateField(key));
+      field.addEventListener('input', () => {
+        const errorEl = getErrorEl(key);
+        if (errorEl && !errorEl.classList.contains('hidden')) {
+          validateField(key);
+        }
+      });
+    });
+
+    leadForm.addEventListener('submit', (event) => {
+      const honeypot = leadForm.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value.trim() !== '') {
+        return;
+      }
+
+      let isValid = true;
+      let firstInvalidField = null;
+
+      Object.keys(fieldConfig).forEach((key) => {
+        const fieldIsValid = validateField(key);
+        if (!fieldIsValid) {
+          isValid = false;
+          if (!firstInvalidField) firstInvalidField = getField(key);
+        }
+      });
+
+      if (!isValid) {
+        event.preventDefault();
+        firstInvalidField?.focus();
+      }
+    });
+  });
 })();

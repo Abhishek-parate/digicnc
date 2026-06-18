@@ -1,15 +1,27 @@
 <?php
 $categories = array_values(array_unique(array_map(fn (array $item): string => $item['category'], $repo->gallery())));
 ?>
-<section class="inner-hero" style="<?= hero_background_style('assets/images/hero-slider-jali-cnc-clean.png', 'center right') ?>">
-    <div class="mx-auto max-w-7xl px-4 py-20 lg:px-6">
-        <p class="eyebrow text-red-300">Project Gallery</p>
-        <h1 class="mt-4 max-w-4xl font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl">CNC Cutting, Carving, Jali, Furniture Components and Custom Project Gallery</h1>
-        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-200">Browse Digi CNC project categories for 2D CNC cutting, 3D CNC carving, parametric designs, decorative jali, furniture components, mandir designs and custom CNC projects.</p>
+<section class="bg-white">
+    <img
+    style="height:400px; width:100%; border:5px;"
+    src="<?= e(asset_url('assets/images/hero-slider-jali-cnc-clean.png')) ?>"
+    alt="CNC Project Gallery Digi CNC Nagpur"
+>
+
+    <div class="mx-auto mt-12 max-w-7xl px-4 py-12 lg:px-6">
+        <p class="eyebrow text-red-600">Project Gallery</p>
+
+        <h1 class="mt-4 max-w-7xl font-heading text-4xl font-extrabold leading-tight text-slate-950 lg:text-4xl">
+            CNC Cutting, Carving, Jali, Furniture Components and Custom Project Gallery
+        </h1>
+
+        <p class="mt-6 mb-8 max-w-7xl text-lg leading-8 text-slate-600">
+            Browse Digi CNC project categories for 2D CNC cutting, 3D CNC carving, parametric designs, decorative jali, furniture components, mandir designs and custom CNC projects.
+        </p>
     </div>
 </section>
 
-<section class="section bg-white">
+<section>
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
         <div class="flex flex-wrap gap-2" data-gallery-filters>
             <button class="filter-btn is-active" data-filter="all" type="button">All</button>
@@ -34,7 +46,7 @@ $categories = array_values(array_unique(array_map(fn (array $item): string => $i
     </div>
 </section>
 
-<section class="section bg-slate-50">
+<section class="section bg-slate-50 py-5">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1fr_.9fr] lg:px-6">
         <div class="prose-content">
             <p class="eyebrow">Gallery SEO Notes</p>
@@ -50,10 +62,30 @@ $categories = array_values(array_unique(array_map(fn (array $item): string => $i
     </div>
 </section>
 
-<div class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-950/90 p-4" data-lightbox-modal aria-hidden="true">
-    <div class="relative max-h-full max-w-5xl">
-        <button class="absolute -right-2 -top-12 rounded bg-white px-3 py-2 font-bold text-slate-950" data-lightbox-close type="button">Close</button>
-        <img class="max-h-[82vh] rounded-lg object-contain" data-lightbox-image src="" alt="">
-        <p class="mt-3 text-center font-semibold text-white" data-lightbox-title></p>
+<div data-lightbox-modal aria-hidden="true"
+     style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(2,6,23,.88); align-items:center; justify-content:center; padding:24px;">
+
+    <button id="prevBtn" type="button"
+        style="position:fixed; left: 10px;px; top:45%; transform:translateY(-50%); z-index:10000; width:60px; height:60px; color:white; font-size:40px; line-height:1;">
+        ‹
+    </button>
+
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <button data-lightbox-close type="button"
+            style="position:fixed; right:80px; top:50px; z-index:10000; background:transparent; border:0; color:white; font-size:60px; cursor:pointer;">
+            ×
+        </button>
+
+        <img data-lightbox-image src="" alt=""
+            style="max-height:72vh; max-width:78vw; object-fit:contain; border-radius:10px; display:block;">
+
+        <div style="margin-top:12px; width:78vw; max-width:1100px; padding:14px 20px; text-align:center;">
+            <p data-lightbox-title style="margin:0; color:white; font-size:22px; font-weight:800;"></p>
+        </div>
     </div>
+
+    <button id="nextBtn" type="button"
+        style="position:fixed; right: 10px;px; top:45%; transform:translateY(-50%); z-index:10000; width:60px; height:60px; color:white; font-size:40px; line-height:1;">
+        ›
+    </button>
 </div>

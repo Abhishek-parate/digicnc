@@ -10,16 +10,19 @@ $compact = $compact ?? false;
         <label class="form-field">
             <span>Name *</span>
             <input name="name" required autocomplete="name" placeholder="Your name">
+            <span class="form-error hidden text-xs text-red-600 mt-1" data-error-for="name"></span>
         </label>
         <label class="form-field">
             <span>Phone *</span>
-            <input name="phone" required autocomplete="tel" placeholder="+91">
+            <input name="phone" required autocomplete="tel" inputmode="tel" placeholder="+91">
+            <span class="form-error hidden text-xs text-red-600 mt-1" data-error-for="phone"></span>
         </label>
     </div>
     <div class="grid gap-4 sm:grid-cols-2">
         <label class="form-field">
             <span>Email</span>
             <input type="email" name="email" autocomplete="email" placeholder="name@example.com">
+            <span class="form-error hidden text-xs text-red-600 mt-1" data-error-for="email"></span>
         </label>
         <label class="form-field">
             <span>Company / Studio</span>
@@ -50,6 +53,7 @@ $compact = $compact ?? false;
     <label class="form-field">
         <span>Project Requirement *</span>
         <textarea name="message" required rows="<?= $compact ? 4 : 5 ?>" placeholder="Share material, size, quantity, design file status and timeline."></textarea>
+        <span class="form-error hidden text-xs text-red-600 mt-1" data-error-for="message"></span>
     </label>
     <button class="btn-primary w-full justify-center py-3" type="submit">Request CNC Quotation</button>
     <p class="text-center text-xs leading-5 text-slate-500">For urgent work, call or WhatsApp <a class="font-bold text-red-600" href="tel:+919766653376">+91 9766653376</a>.</p>

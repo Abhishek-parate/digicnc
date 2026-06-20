@@ -655,7 +655,7 @@ $firstService = $services[0] ?? null;
 
             <!-- Bottom: body copy + pill CTA, full width below heading -->
             <div class="w-full">
-                <p class="max-w-2xl text-sm leading-7 text-slate-500">
+                <p class="text-sm leading-7 text-slate-500">
                     The Digi CNC workflow reduces uncertainty. Clients arrive with different levels of readiness — a polished CAD file, a reference image, rough dimensions, or a physical sample. The process turns that input into a practical manufacturing plan.
                 </p>
                 <a href="<?= e(app_url('contact-us')) ?>"
@@ -863,27 +863,27 @@ $firstService = $services[0] ?? null;
             <?php endforeach; ?>
         </div>
 
-        <div class="mt-8 grid grid-cols-[auto_1fr] items-center gap-x-6 gap-y-0 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
-            <div class="flex items-center gap-3">
-                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M6 11h12M8 15h8M10 19h4" />
-                    </svg>
-                </span>
-                <p class="whitespace-nowrap text-sm text-slate-500">
-                    <span class="font-semibold text-slate-800">9+ materials</span>
-                    <span class="mx-2 text-slate-300">·</span>
-                    Cutting, carving &amp; parametric manufacturing across Nagpur &amp; Maharashtra
-                </p>
-            </div>
-            <div class="flex items-center justify-end gap-2">
-                <?php foreach (['MDF', 'HDHMR', 'Acrylic', 'ACP', 'Wood', 'WPC'] as $mat): ?>
-                    <span class="material-badge inline-flex cursor-default select-none items-center rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-widest text-indigo-700 whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-700 hover:bg-indigo-700 hover:text-white hover:shadow-[0_6px_18px_rgba(67,56,202,0.28)]">
-                        <?= e($mat) ?>
-                    </span>
-                <?php endforeach; ?>
-            </div>
-        </div>
+      <div class="mt-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-6 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+    <div class="flex items-start lg:items-center gap-3 lg:flex-shrink-0">
+        <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M6 11h12M8 15h8M10 19h4" />
+            </svg>
+        </span>
+        <p class="text-sm leading-6 text-slate-500 lg:whitespace-nowrap">
+            <span class="font-semibold text-slate-800">9+ materials</span>
+            <span class="mx-2 text-slate-300">·</span>
+            Cutting, carving &amp; parametric manufacturing across Nagpur &amp; Maharashtra
+        </p>
+    </div>
+    <div class="flex flex-wrap items-center justify-start gap-2 lg:flex-nowrap lg:justify-end lg:flex-shrink-0">
+        <?php foreach (['MDF', 'HDHMR', 'Acrylic', 'ACP', 'Wood', 'WPC'] as $mat): ?>
+            <span class="material-badge inline-flex cursor-default select-none items-center rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-widest text-indigo-700 whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-700 hover:bg-indigo-700 hover:text-white hover:shadow-[0_6px_18px_rgba(67,56,202,0.28)]">
+                <?= e($mat) ?>
+            </span>
+        <?php endforeach; ?>
+    </div>
+</div>
     </div>
 </section>
 

@@ -133,7 +133,7 @@ $heroSlides = $repo->heroSlides(); ?>
 <!-- ── Stats bar ────────────────────────────────────────────── -->
 <section class="border-t border-slate-200 bg-white py-4 lg:py-6">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-        <div class="grid divide-y divide-slate-200 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
+        <div class="grid grid-cols-2 divide-x divide-y divide-slate-200 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
             <?php foreach ($repo->stats() as $stat): ?>
                 <div class="px-6 py-4 text-center">
                     <p class="font-heading text-3xl font-bold text-indigo-700 sm:text-4xl">
@@ -248,25 +248,11 @@ $heroSlides = $repo->heroSlides(); ?>
                 <?php endforeach; ?>
             </div>
         </div>
-      </div>
+    </div>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <?php foreach ([
-          ['num' => '01', 'title' => 'Drawing-First Review',       'body' => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.'],
-          ['num' => '02', 'title' => 'Material-Aware Machining',   'body' => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.'],
-          ['num' => '03', 'title' => 'B2B + B2C Support',         'body' => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.'],
-          ['num' => '04', 'title' => 'Conversion-Focused Guidance','body' => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.'],
-        ] as $item): ?>
-          <article class="feature-card">
-            <span class="feature-num"><?= e($item['num']) ?></span>
-            <h3 class="mt-3 font-heading text-[1rem] font-bold text-slate-900"><?= e($item['title']) ?></h3>
-            <p class="mt-2 text-[0.82rem] leading-7 text-slate-600"><?= e($item['body']) ?></p>
-          </article>
-        <?php endforeach; ?>
-      </div>
 
     </div>
-  </div>
+    </div>
 </section>
 
 
@@ -881,27 +867,27 @@ $firstService = $services[0] ?? null;
             <?php endforeach; ?>
         </div>
 
-      <div class="mt-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-6 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
-    <div class="flex items-start lg:items-center gap-3 lg:flex-shrink-0">
-        <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M6 11h12M8 15h8M10 19h4" />
-            </svg>
-        </span>
-        <p class="text-sm leading-6 text-slate-500 lg:whitespace-nowrap">
-            <span class="font-semibold text-slate-800">9+ materials</span>
-            <span class="mx-2 text-slate-300">·</span>
-            Cutting, carving &amp; parametric manufacturing across Nagpur &amp; Maharashtra
-        </p>
-    </div>
-    <div class="flex flex-wrap items-center justify-start gap-2 lg:flex-nowrap lg:justify-end lg:flex-shrink-0">
-        <?php foreach (['MDF', 'HDHMR', 'Acrylic', 'ACP', 'Wood', 'WPC'] as $mat): ?>
-            <span class="material-badge inline-flex cursor-default select-none items-center rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-widest text-indigo-700 whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-700 hover:bg-indigo-700 hover:text-white hover:shadow-[0_6px_18px_rgba(67,56,202,0.28)]">
-                <?= e($mat) ?>
-            </span>
-        <?php endforeach; ?>
-    </div>
-</div>
+        <div class="mt-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-6 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
+            <div class="flex items-start lg:items-center gap-3 lg:flex-shrink-0">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M6 11h12M8 15h8M10 19h4" />
+                    </svg>
+                </span>
+                <p class="text-sm leading-6 text-slate-500 lg:whitespace-nowrap">
+                    <span class="font-semibold text-slate-800">9+ materials</span>
+                    <span class="mx-2 text-slate-300">·</span>
+                    Cutting, carving &amp; parametric manufacturing across Nagpur &amp; Maharashtra
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-start gap-2 lg:flex-nowrap lg:justify-end lg:flex-shrink-0">
+                <?php foreach (['MDF', 'HDHMR', 'Acrylic', 'ACP', 'Wood', 'WPC'] as $mat): ?>
+                    <span class="material-badge inline-flex cursor-default select-none items-center rounded-full border-2 border-indigo-300 bg-indigo-50 px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-widest text-indigo-700 whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-700 hover:bg-indigo-700 hover:text-white hover:shadow-[0_6px_18px_rgba(67,56,202,0.28)]">
+                        <?= e($mat) ?>
+                    </span>
+                <?php endforeach; ?>
+            </div>
+        </div>
     </div>
 </section>
 

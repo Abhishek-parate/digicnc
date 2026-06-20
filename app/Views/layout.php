@@ -1,6 +1,7 @@
 <?php
 $company = $repo->company();
 $servicePages = $repo->servicePages();
+$whatsappDigits = preg_replace('/\D+/', '', $company['whatsapp']);
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
 ?>
@@ -230,7 +231,7 @@ unset($_SESSION['flash']);
                 <p class="mt-5 text-sm leading-7 text-slate-300"><?= e($company['tagline']) ?></p>
                 <div class="mt-5 flex gap-3">
                     <a class="rounded bg-white px-4 py-2 text-sm font-bold text-slate-950" href="tel:+919766653376">Call Now</a>
-                    <a class="rounded border border-white/20 px-4 py-2 text-sm font-bold text-white" href="https://wa.me/<?= e($company['whatsapp']) ?>" target="_blank" rel="noopener">WhatsApp</a>
+<a class="rounded border border-white/20 px-4 py-2 text-sm font-bold text-white" href="https://wa.me/<?= e($whatsappDigits) ?>" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
             </div>
             <div>
@@ -265,10 +266,10 @@ unset($_SESSION['flash']);
             © <?= date('Y') ?> Digi CNC. 2D & 3D CNC Cutting, Carving and Parametric Manufacturing in Nagpur.
         </div>
     </footer>
-
-    <!-- WhatsApp floating icon button (bottom-right) -->
+<!-- WhatsApp floating icon button (bottom-right) -->
+    <?php $whatsappDigits = preg_replace('/\D+/', '', $company['whatsapp']); ?>
     <a class="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 shadow-2xl transition hover:scale-110 hover:bg-emerald-600"
-       href="https://wa.me/<?= e($company['whatsapp']) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation."
+       href="https://wa.me/<?= e($whatsappDigits) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation."
        target="_blank" rel="noopener" aria-label="WhatsApp Digi CNC">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" class="h-7 w-7">
             <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.83.74 5.49 2.03 7.8L.5 31.5l7.93-2.08A15.45 15.45 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm0 28.28a13.17 13.17 0 01-6.72-1.84l-.48-.29-4.7 1.23 1.26-4.58-.31-.5A13.22 13.22 0 1116 28.78zm7.26-9.9c-.4-.2-2.35-1.16-2.71-1.29-.37-.13-.63-.2-.9.2-.26.4-1.02 1.29-1.25 1.55-.23.27-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.97-1.18-1.05-1.98-2.35-2.21-2.75-.23-.4-.02-.62.17-.82.18-.18.4-.46.6-.7.2-.23.26-.4.4-.66.13-.27.07-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68h-.76c-.27 0-.7.1-1.06.5-.37.4-1.4 1.37-1.4 3.33 0 1.97 1.43 3.87 1.63 4.13.2.27 2.8 4.27 6.79 5.98.95.41 1.69.66 2.27.84.95.3 1.82.26 2.5.16.76-.11 2.35-.96 2.68-1.89.33-.93.33-1.73.23-1.89-.1-.17-.36-.27-.76-.47z"/>

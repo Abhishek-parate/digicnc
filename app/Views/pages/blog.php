@@ -285,9 +285,9 @@
 
             <!-- Load More -->
             <div class="mt-8 text-center">
-                <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-10 py-3 text-sm">
+                <a href="#" class="group inline-flex items-center gap-2 rounded-full border-2 border-indigo-700 bg-white px-8 py-3 text-sm font-bold text-indigo-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo-700 hover:text-white hover:shadow-lg hover:shadow-indigo-200">
                     Load More Articles
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="transition-transform duration-300 group-hover:translate-y-0.5">
                         <path d="M12 5v14M5 12l7 7 7-7" />
                     </svg>
                 </a>
@@ -318,13 +318,8 @@
                     loading="lazy">
             </div>
         </div>
-        <div class="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2">
-            <div class="prose-content">
-            <p>The Digi CNC blog is designed to support long-term organic search growth. The admin panel includes category management, SEO fields, slug generation, featured image upload, rich text content and schema support. This allows the business to publish articles around high-intent topics such as CNC cutting service in Nagpur, MDF CNC cutting, HDHMR CNC cutting, 3D CNC carving, decorative jali cutting, parametric design manufacturing, acrylic CNC cutting, ACP cutting, WPC cutting and custom CNC projects.</p>
-            </div>
-            <div class="prose-content">
-            <p>Educational content helps conversion because CNC buyers often need guidance before they are ready to request a quote. Articles can explain file preparation, material selection, jali pattern strength, finish planning, furniture component batching, prototype workflows and cost factors. When this content links naturally to service pages and inquiry forms, the website becomes more useful for visitors and stronger for search engines.</p>
-
+        <div class="mt-8 prose-content text-sm leading-7 text-slate-600 text-justify">
+            <p>The Digi CNC blog is designed to support long-term organic search growth. The admin panel includes category management, SEO fields, slug generation, featured image upload, rich text content and schema support. This allows the business to publish articles around high-intent topics such as CNC cutting service in Nagpur, MDF CNC cutting, HDHMR CNC cutting, 3D CNC carving, decorative jali cutting, parametric design manufacturing, acrylic CNC cutting, ACP cutting, WPC cutting and custom CNC projects.<br> <br> Educational content helps conversion because CNC buyers often need guidance before they are ready to request a quote. Articles can explain file preparation, material selection, jali pattern strength, finish planning, furniture component batching, prototype workflows and cost factors. When this content links naturally to service pages and inquiry forms, the website becomes more useful for visitors and stronger for search engines.</p>
         </div>
     </div>
 </section>

@@ -247,4 +247,14 @@
       }
     });
   });
+  document.querySelectorAll('section:not(.bg-slate-950):not(.bg-slate-900) p').forEach(function(el) {
+    if (
+        el.classList.contains('text-slate-500') ||
+        el.classList.contains('text-slate-600') ||
+        el.classList.contains('text-slate-400')
+    ) {
+        el.classList.remove('text-slate-500', 'text-slate-600', 'text-slate-400');
+        el.classList.add('text-slate-800');
+    }
+});
 })();

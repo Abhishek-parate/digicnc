@@ -29,7 +29,7 @@
                         Digi CNC is founded by <?= e($company['founder']) ?> and serves architects, interior designers, furniture manufacturers, contractors, industrial teams, artists, prototype companies and homeowners with 2D CNC cutting, 3D CNC carving, decorative jali, parametric manufacturing and custom CNC projects.
                     </p>
                     <div class="mt-8">
-                        <a href="/services"
+                        <a href="services"
                             class="inline-flex items-center gap-2 text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
                             style="background: #322EA1;">
                             Explore Our Services
@@ -304,9 +304,8 @@
                 <h2 class="text-center font-heading text-2xl font-black text-slate-900">Mission</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: #322EA1;"></div>
                 <p class="flex-1 text-sm leading-7 text-slate-500 text-justify">To provide Nagpur and Maharashtra with CNC cutting and carving services that turn design intent into accurate, buildable, finish-ready components for interiors, furniture, prototypes and custom manufacturing.</p>
-                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-center">
                     <span class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Design to Output</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
             </article>
 
@@ -324,9 +323,8 @@
                 <h2 class="text-center font-heading text-2xl font-black text-white">Vision</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: rgba(165,180,252,0.7);"></div>
                 <p class="flex-1 text-sm leading-7 text-justify" style="color: #c7d2fe;">To become a trusted CNC manufacturing partner for architects, designers, manufacturers and homeowners who rely on premium advice and dependable project communication.</p>
-                <div class="mt-5 pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.12);">
+                <div class="mt-5 pt-4 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.12);">
                     <span class="text-xs font-bold uppercase tracking-[0.18em] text-indigo-200">Trusted Partnership</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
             </article>
 
@@ -344,9 +342,8 @@
                 <h2 class="text-center font-heading text-2xl font-black text-slate-900">Core Promise</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: #322EA1;"></div>
                 <p class="flex-1 text-sm leading-7 text-slate-500 text-justify">Every project receives manufacturing attention before machine time: file review, material fit, pattern strength, production feasibility, edge quality and clear next-step guidance.</p>
-                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-center">
                     <span class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Quality Assured</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
             </article>
 

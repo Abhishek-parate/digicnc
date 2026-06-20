@@ -64,61 +64,57 @@ unset($_SESSION['flash']);
                 <div class="group relative">
                     <a class="nav-link inline-flex items-center gap-1 <?= is_active('services') ? 'nav-link-active' : '' ?>" href="<?= e(app_url('services')) ?>">Services <span aria-hidden="true">▾</span></a>
                     <div class="invisible absolute left-1/2 top-full w-[700px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-    <!-- Arrow pointer -->
-    <div class="mx-auto h-2.5 w-2.5 rotate-45 border-l border-t border-slate-200 bg-white" style="margin-left:calc(50% - 5px); margin-bottom:-1px; position:relative; z-index:1;"></div>
-    <div class="rounded-xl border border-slate-200 bg-white shadow-2xl overflow-hidden">
-        <!-- Header -->
-        <div class="flex items-center justify-between px-5 py-3" style="background: linear-gradient(135deg, #322EA1 0%, #4340c4 100%);">
-            <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
-                <p class="text-xs font-bold uppercase tracking-widest text-white/80">Our Services</p>
-                <span class="text-white/30 text-xs">|</span>
-                <p class="text-sm font-bold text-white">Precision CNC Solutions</p>
-            </div>
-            <p class="text-xs text-white/60">Nagpur · Maharashtra</p>
-        </div>
-        <!-- Service grid -->
-        <div class="grid grid-cols-2 divide-x divide-y divide-slate-100">
-            <?php
-            $serviceIcons = [
-                'M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3v2m0 10v2m-7-7H3m16 0h-2M6.34 6.34l1.42 1.42m8.49 8.49l1.41 1.41M6.34 17.66l1.42-1.42m8.49-8.49l1.41-1.41',
-                'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
-                'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z',
-                'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
-                'M12 2a5 5 0 015 5c0 5-5 13-5 13S7 12 7 7a5 5 0 015-5z',
-                'M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z',
-                'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z',
-                'M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z',
-                'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12h8m-4-4v8',
-            ];
-            $i = 0;
-            foreach ($servicePages as $slug => $service):
-                $icon = $serviceIcons[$i % count($serviceIcons)];
-                $i++;
-            ?>
-            <a class="group/item flex items-center gap-3 px-4 py-2 transition-all duration-150 hover:bg-[#322EA1]/5" href="<?= e(app_url($slug)) ?>">
-                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg transition-all duration-150 group-hover/item:scale-110" style="background-color: rgba(50,46,161,0.08);">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-colors" style="color:#322EA1;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="<?= $icon ?>"/>
-                    </svg>
-                </span>
-                <span class="flex-1 min-w-0 text-sm font-semibold text-slate-700 transition-colors group-hover/item:text-[#322EA1]"><?= e($service['title']) ?></span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-slate-300 transition-all duration-150 group-hover/item:translate-x-1 group-hover/item:text-[#322EA1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-            <?php endforeach; ?>
-        </div>
-        <!-- Footer strip -->
-        <div class="flex items-center justify-between border-t border-slate-100 px-5 py-2.5" style="background: rgba(50,46,161,0.04);">
-            <p class="text-xs text-slate-400">CNC Cutting · Carving · Parametric Design · Nagpur</p>
-            <a href="<?= e(app_url('services')) ?>" class="flex items-center gap-1 text-xs font-bold transition-colors hover:opacity-80" style="color:#322EA1;">
-                View All Services
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
+                        <div class="mx-auto h-2.5 w-2.5 rotate-45 border-l border-t border-slate-200 bg-white" style="margin-left:calc(50% - 5px); margin-bottom:-1px; position:relative; z-index:1;"></div>
+                        <div class="rounded-xl border border-slate-200 bg-white shadow-2xl overflow-hidden">
+                            <div class="flex items-center justify-between px-5 py-3" style="background: linear-gradient(135deg, #322EA1 0%, #4340c4 100%);">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-white/80">Our Services</p>
+                                    <span class="text-white/30 text-xs">|</span>
+                                    <p class="text-sm font-bold text-white">Precision CNC Solutions</p>
+                                </div>
+                                <p class="text-xs text-white/60">Nagpur · Maharashtra</p>
+                            </div>
+                            <div class="grid grid-cols-2 divide-x divide-y divide-slate-100">
+                                <?php
+                                $serviceIcons = [
+                                    'M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3v2m0 10v2m-7-7H3m16 0h-2M6.34 6.34l1.42 1.42m8.49 8.49l1.41 1.41M6.34 17.66l1.42-1.42m8.49-8.49l1.41-1.41',
+                                    'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+                                    'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z',
+                                    'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+                                    'M12 2a5 5 0 015 5c0 5-5 13-5 13S7 12 7 7a5 5 0 015-5z',
+                                    'M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z',
+                                    'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z',
+                                    'M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z',
+                                    'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12h8m-4-4v8',
+                                ];
+                                $i = 0;
+                                foreach ($servicePages as $slug => $service):
+                                    $icon = $serviceIcons[$i % count($serviceIcons)];
+                                    $i++;
+                                ?>
+                                <a class="group/item flex items-center gap-3 px-4 py-2 transition-all duration-150 hover:bg-[#322EA1]/5" href="<?= e(app_url($slug)) ?>">
+                                    <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg transition-all duration-150 group-hover/item:scale-110" style="background-color: rgba(50,46,161,0.08);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" style="color:#322EA1;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="<?= $icon ?>"/>
+                                        </svg>
+                                    </span>
+                                    <span class="flex-1 min-w-0 text-sm font-semibold text-slate-700 group-hover/item:text-[#322EA1]"><?= e($service['title']) ?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-slate-300 group-hover/item:translate-x-1 group-hover/item:text-[#322EA1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-100 px-5 py-2.5" style="background: rgba(50,46,161,0.04);">
+                                <p class="text-xs text-slate-400">CNC Cutting · Carving · Parametric Design · Nagpur</p>
+                                <a href="<?= e(app_url('services')) ?>" class="flex items-center gap-1 text-xs font-bold hover:opacity-80" style="color:#322EA1;">
+                                    View All Services
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <a class="nav-link <?= is_active('gallery') ? 'nav-link-active' : '' ?>" href="<?= e(app_url('gallery')) ?>">Gallery</a>
                 <a class="nav-link <?= is_active('blog') ? 'nav-link-active' : '' ?>" href="<?= e(app_url('blog')) ?>">Blog</a>
@@ -132,16 +128,79 @@ unset($_SESSION['flash']);
 
             <button class="inline-flex h-10 w-10 items-center justify-center rounded border border-slate-300 text-slate-900 lg:hidden" data-mobile-toggle aria-label="Open menu">☰</button>
         </div>
+
+        <!-- Mobile Menu -->
         <div class="hidden border-t border-slate-200 bg-white px-4 py-4 lg:hidden" data-mobile-menu>
-            <div class="grid gap-2">
-                <?php foreach ([['Home',''], ['About','about-us'], ['Services','services'], ['Gallery','gallery'], ['Blog','blog'], ['Contact','contact-us']] as [$label, $path]): ?>
-                    <a class="rounded-md px-3 py-2 font-semibold text-slate-800 hover:bg-red-50 hover:text-red-700" href="<?= e(app_url($path)) ?>"><?= e($label) ?></a>
+            <div class="grid gap-1">
+                <?php foreach ([['Home',''], ['About','about-us'], ['Gallery','gallery'], ['Blog','blog'], ['Contact','contact-us']] as [$label, $path]): ?>
+                    <a class="rounded-md px-3 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#322EA1]" href="<?= e(app_url($path)) ?>"><?= e($label) ?></a>
                 <?php endforeach; ?>
-                <div class="mt-2 border-t border-slate-200 pt-2">
-                    <?php foreach ($servicePages as $slug => $service): ?>
-                        <a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-red-50 hover:text-red-700" href="<?= e(app_url($slug)) ?>"><?= e($service['title']) ?></a>
-                    <?php endforeach; ?>
+
+                <!-- Services Accordion -->
+                <div>
+                    <button class="flex w-full items-center justify-between rounded-md px-3 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#322EA1]" data-services-toggle aria-expanded="false">
+                        <span>Services</span>
+                        <svg class="h-4 w-4 transition-transform duration-200" data-services-chevron xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    <div class="hidden mt-1 overflow-hidden rounded-xl border border-slate-200" data-services-panel>
+                        <!-- Header -->
+                        <div class="flex items-center justify-between px-4 py-2.5" style="background: linear-gradient(135deg, #322EA1 0%, #4340c4 100%);">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/>
+                                </svg>
+                                <p class="text-xs font-bold uppercase tracking-widest text-white/80">Our Services</p>
+                            </div>
+                            <p class="text-xs text-white/60">Nagpur · Maharashtra</p>
+                        </div>
+                        <!-- Service Links -->
+                        <div class="divide-y divide-slate-100 bg-white">
+                            <?php
+                            $mobileServiceIcons = [
+                                'M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3v2m0 10v2m-7-7H3m16 0h-2M6.34 6.34l1.42 1.42m8.49 8.49l1.41 1.41M6.34 17.66l1.42-1.42m8.49-8.49l1.41-1.41',
+                                'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+                                'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z',
+                                'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+                                'M12 2a5 5 0 015 5c0 5-5 13-5 13S7 12 7 7a5 5 0 015-5z',
+                                'M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z',
+                                'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z',
+                                'M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z',
+                                'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12h8m-4-4v8',
+                            ];
+                            $mi = 0;
+                            foreach ($servicePages as $slug => $service):
+                                $micon = $mobileServiceIcons[$mi % count($mobileServiceIcons)];
+                                $mi++;
+                            ?>
+                            <a class="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-[#322EA1]/5" href="<?= e(app_url($slug)) ?>">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg" style="background-color: rgba(50,46,161,0.08);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" style="color:#322EA1;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="<?= $micon ?>"/>
+                                    </svg>
+                                </span>
+                                <span class="flex-1 text-sm font-semibold text-slate-700"><?= e($service['title']) ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                        <!-- Footer -->
+                        <div class="flex items-center justify-between border-t border-slate-100 px-4 py-2.5" style="background: rgba(50,46,161,0.04);">
+                            <p class="text-xs text-slate-400">CNC Cutting · Carving · Nagpur</p>
+                            <a href="<?= e(app_url('services')) ?>" class="flex items-center gap-1 text-xs font-bold" style="color:#322EA1;">
+                                View All
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </header>
@@ -225,5 +284,23 @@ unset($_SESSION['flash']);
     </a>
 
     <script src="<?= e(versioned_asset_url('assets/js/app.js')) ?>" defer></script>
+
+    <!-- Services accordion — app.js ke baad load hoga -->
+    <script>
+    window.addEventListener('load', function () {
+        const servicesToggle  = document.querySelector('[data-services-toggle]');
+        const servicesPanel   = document.querySelector('[data-services-panel]');
+        const servicesChevron = document.querySelector('[data-services-chevron]');
+
+        if (servicesToggle && servicesPanel) {
+            servicesToggle.addEventListener('click', function () {
+                const isOpen = !servicesPanel.classList.contains('hidden');
+                servicesPanel.classList.toggle('hidden', isOpen);
+                if (servicesChevron) servicesChevron.classList.toggle('rotate-180', !isOpen);
+                servicesToggle.setAttribute('aria-expanded', String(!isOpen));
+            });
+        }
+    });
+    </script>
 </body>
 </html>

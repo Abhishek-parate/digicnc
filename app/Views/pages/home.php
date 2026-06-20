@@ -248,7 +248,25 @@ $heroSlides = $repo->heroSlides(); ?>
                 <?php endforeach; ?>
             </div>
         </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <?php foreach ([
+          ['num' => '01', 'title' => 'Drawing-First Review',       'body' => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.'],
+          ['num' => '02', 'title' => 'Material-Aware Machining',   'body' => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.'],
+          ['num' => '03', 'title' => 'B2B + B2C Support',         'body' => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.'],
+          ['num' => '04', 'title' => 'Conversion-Focused Guidance','body' => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.'],
+        ] as $item): ?>
+          <article class="feature-card">
+            <span class="feature-num"><?= e($item['num']) ?></span>
+            <h3 class="mt-3 font-heading text-[1rem] font-bold text-slate-900"><?= e($item['title']) ?></h3>
+            <p class="mt-2 text-[0.82rem] leading-7 text-slate-600"><?= e($item['body']) ?></p>
+          </article>
+        <?php endforeach; ?>
+      </div>
+
     </div>
+  </div>
 </section>
 
 

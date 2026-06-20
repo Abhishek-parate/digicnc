@@ -10,7 +10,7 @@ return [
         'experience' => '5+ Years',
         'phone' => '+91 9766653376',
         'whatsapp' => '919766653376',
-        'location' => 'Nagpur, Maharashtra, India',
+        'location' => 'plot no.11 Bharatwada Rd, Bharatwada, Nagpur, Maharashtra 440035',
         'hours' => 'Monday to Saturday, 9:30 AM to 7:00 PM',
         'tagline' => 'Precision CNC cutting, carving, engraving, jali, furniture components, prototypes, and parametric manufacturing for architects, designers, manufacturers, and homeowners.',
     ],

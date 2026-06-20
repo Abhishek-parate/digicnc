@@ -1,13 +1,26 @@
 <article>
-    <section class="inner-hero" style="<?= hero_background_style($blog['image'], 'center right') ?>">
-        <div class="mx-auto max-w-4xl px-4 py-20 lg:px-6">
-            <p class="eyebrow text-red-300"><?= e($blog['category']) ?> · <?= e(date('d M Y', strtotime($blog['published_at']))) ?></p>
-            <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight text-white lg:text-6xl"><?= e($blog['title']) ?></h1>
-            <p class="mt-6 text-lg leading-8 text-slate-200"><?= e($blog['excerpt']) ?></p>
-        </div>
-    </section>
+    <img
+        src="<?= e(asset_url($blog['image'])) ?>"
+        alt="<?= e($blog['title']) ?>"
+        style="height:400px; width:100%; object-fit:cover;"
+    >
+    <div class="mx-auto mt-12 max-w-7xl px-4 py-12 lg:px-6">
+        <p class="eyebrow text-red-600">
+            <?= e($blog['category']) ?> · <?= e(date('d M Y', strtotime($blog['published_at']))) ?>
+        </p>
 
-    <section class="section bg-white">
+        <h1 class="mt-4 font-heading text-4xl font-extrabold leading-tight text-slate-950 lg:text-4xl">
+            <?= e($blog['title']) ?>
+        </h1>
+
+        <p class="mt-4 text-lg leading-8 text-slate-600">
+            <?= e($blog['excerpt']) ?>
+        </p>
+    </div>
+
+</article>
+
+    <section class="section pt-4 mt-4 pb-16 bg-white">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-6">
             <div>
                 <img class="mb-8 max-h-[520px] w-full rounded-lg object-cover shadow-lg" src="<?= e(asset_url($blog['image'])) ?>" loading="lazy" alt="<?= e($blog['title']) ?>">

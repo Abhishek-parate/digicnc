@@ -9,8 +9,8 @@ return [
         'founder' => 'Mr. Krunal Patel',
         'experience' => '5+ Years',
         'phone' => '+91 9766653376',
-        'whatsapp' => '919766653376',
-        'location' => 'plot no.11 Bharatwada Rd, Bharatwada, Nagpur, Maharashtra 440035',
+        'whatsapp' => '+91 9766653376',
+        'location' => 'Plot no.11 Bharatwada Rd, Bharatwada, Nagpur, Maharashtra 440035',
         'hours' => 'Monday to Saturday, 9:30 AM to 7:00 PM',
         'tagline' => 'Precision CNC cutting, carving, engraving, jali, furniture components, prototypes, and parametric manufacturing for architects, designers, manufacturers, and homeowners.',
     ],
@@ -331,6 +331,8 @@ return [
         'contact' => [
             ['q' => 'What is the fastest way to contact Digi CNC?', 'a' => 'Call or WhatsApp +91 9766653376 for urgent project discussions, file sharing and quick feasibility checks.'],
             ['q' => 'Can I send files on WhatsApp?', 'a' => 'Yes. You can send reference images, PDFs and drawings on WhatsApp. For production files, email or a file-sharing link may be better for larger attachments.'],
+            ['q' => 'What information should I provide for an accurate CNC quotation?', 'a' => 'For the fastest and most accurate quotation, share material type, thickness, dimensions, quantity, design files or reference images, finishing requirements and expected timeline. Detailed project information helps Digi CNC review feasibility and provide more precise pricing guidance.'],
+            ['q' => 'Do I need a CAD file before contacting Digi CNC?', 'a' => 'No. If a CAD file is not available, you can share sketches, reference images, dimensions or project requirements. Digi CNC can review the concept and guide the next steps for manufacturing.']
         ],
     ],
     'seo' => [

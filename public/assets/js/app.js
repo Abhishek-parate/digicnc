@@ -92,35 +92,67 @@
     });
   });
 
-  const modal = $('[data-lightbox-modal]');
-  const modalImage = $('[data-lightbox-image]');
-  const modalTitle = $('[data-lightbox-title]');
-  const closeLightbox = () => {
+const modal = $('[data-lightbox-modal]');
+const modalImage = $('[data-lightbox-image]');
+const modalTitle = $('[data-lightbox-title]');
+const lightboxButtons = $$('[data-lightbox]');
+const prevBtn = $('#prevBtn');
+const nextBtn = $('#nextBtn');
+
+let currentLightboxIndex = 0;
+
+const showLightboxImage = (index) => {
+  if (!modalImage || !modalTitle || !lightboxButtons.length) return;
+
+  currentLightboxIndex = (index + lightboxButtons.length) % lightboxButtons.length;
+
+  const button = lightboxButtons[currentLightboxIndex];
+
+  modalImage.src = button.dataset.lightbox || '';
+  modalImage.alt = button.dataset.title || 'Digi CNC gallery image';
+  modalTitle.textContent = button.dataset.title || '';
+};
+
+const closeLightbox = () => {
+  if (!modal) return;
+ modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+};
+
+lightboxButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
     if (!modal) return;
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    modal.setAttribute('aria-hidden', 'true');
-  };
 
-  $$('[data-lightbox]').forEach((button) => {
-    button.addEventListener('click', () => {
-      if (!modal || !modalImage || !modalTitle) return;
-      modalImage.src = button.dataset.lightbox || '';
-      modalImage.alt = button.dataset.title || 'Digi CNC gallery image';
-      modalTitle.textContent = button.dataset.title || '';
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
+    showLightboxImage(index);
 
-  $('[data-lightbox-close]')?.addEventListener('click', closeLightbox);
-  modal?.addEventListener('click', (event) => {
-    if (event.target === modal) closeLightbox();
+   modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
   });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeLightbox();
-  });
+});
+
+nextBtn?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showLightboxImage(currentLightboxIndex + 1);
+});
+
+prevBtn?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showLightboxImage(currentLightboxIndex - 1);
+});
+
+$('[data-lightbox-close]')?.addEventListener('click', closeLightbox);
+
+modal?.addEventListener('click', (event) => {
+  if (event.target === modal) closeLightbox();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (!modal || modal.classList.contains('hidden')) return;
+
+  if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowRight') showLightboxImage(currentLightboxIndex + 1);
+  if (event.key === 'ArrowLeft') showLightboxImage(currentLightboxIndex - 1);
+});
 
   $$('.rich-editor').forEach((editor) => {
     editor.addEventListener('input', () => {

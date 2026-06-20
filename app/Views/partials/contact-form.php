@@ -80,6 +80,7 @@ $compact = $compact ?? false;
     <label class="form-field">
         <span>Project Requirement *</span>
         <textarea name="message" required rows="<?= $compact ? 4 : 5 ?>" placeholder="Share material, size, quantity, design file status and timeline."></textarea>
+        <span class="form-error hidden text-xs text-red-600 mt-1" data-error-for="message"></span>
     </label>
     <button class="btn-primary w-full justify-center py-3" type="submit">Request CNC Quotation</button>
     <p class="text-center text-xs leading-5 text-slate-500">For urgent work, call or WhatsApp <a class="font-bold text-red-600" href="tel:+919766653376">+91 9766653376</a>.</p>

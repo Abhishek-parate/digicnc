@@ -63,14 +63,56 @@ unset($_SESSION['flash']);
                 <a class="nav-link <?= is_active('about-us') ? 'nav-link-active' : '' ?>" href="<?= e(app_url('about-us')) ?>">About</a>
                 <div class="group relative">
                     <a class="nav-link inline-flex items-center gap-1 <?= is_active('services') ? 'nav-link-active' : '' ?>" href="<?= e(app_url('services')) ?>">Services <span aria-hidden="true">▾</span></a>
-                    <div class="invisible absolute left-1/2 top-full w-[760px] -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                        <div class="grid grid-cols-2 gap-2 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-                            <?php foreach ($servicePages as $slug => $service): ?>
-                                <a class="rounded-md p-3 transition hover:bg-red-50" href="<?= e(app_url($slug)) ?>">
-                                    <span class="block font-semibold text-slate-950"><?= e($service['title']) ?></span>
-                                    <span class="mt-1 block text-sm leading-5 text-slate-600"><?= e($service['summary']) ?></span>
+                    <div class="invisible absolute left-1/2 top-full w-[700px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                        <div class="mx-auto h-2.5 w-2.5 rotate-45 border-l border-t border-slate-200 bg-white" style="margin-left:calc(50% - 5px); margin-bottom:-1px; position:relative; z-index:1;"></div>
+                        <div class="rounded-xl border border-slate-200 bg-white shadow-2xl overflow-hidden">
+                            <div class="flex items-center justify-between px-5 py-3" style="background: linear-gradient(135deg, #322EA1 0%, #4340c4 100%);">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-white/80">Our Services</p>
+                                    <span class="text-white/30 text-xs">|</span>
+                                    <p class="text-sm font-bold text-white">Precision CNC Solutions</p>
+                                </div>
+                                <p class="text-xs text-white/60">Nagpur · Maharashtra</p>
+                            </div>
+                            <div class="grid grid-cols-2 divide-x divide-y divide-slate-100">
+                                <?php
+                                $serviceIcons = [
+                                    'M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3v2m0 10v2m-7-7H3m16 0h-2M6.34 6.34l1.42 1.42m8.49 8.49l1.41 1.41M6.34 17.66l1.42-1.42m8.49-8.49l1.41-1.41',
+                                    'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+                                    'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z',
+                                    'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+                                    'M12 2a5 5 0 015 5c0 5-5 13-5 13S7 12 7 7a5 5 0 015-5z',
+                                    'M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z',
+                                    'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z',
+                                    'M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z',
+                                    'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12h8m-4-4v8',
+                                ];
+                                $i = 0;
+                                foreach ($servicePages as $slug => $service):
+                                    $icon = $serviceIcons[$i % count($serviceIcons)];
+                                    $i++;
+                                ?>
+                                <a class="group/item flex items-center gap-3 px-4 py-2 transition-all duration-150 hover:bg-[#322EA1]/5" href="<?= e(app_url($slug)) ?>">
+                                    <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg transition-all duration-150 group-hover/item:scale-110" style="background-color: rgba(50,46,161,0.08);">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" style="color:#322EA1;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="<?= $icon ?>"/>
+                                        </svg>
+                                    </span>
+                                    <span class="flex-1 min-w-0 text-sm font-semibold text-slate-700 group-hover/item:text-[#322EA1]"><?= e($service['title']) ?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-slate-300 group-hover/item:translate-x-1 group-hover/item:text-[#322EA1]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                    </svg>
                                 </a>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-100 px-5 py-2.5" style="background: rgba(50,46,161,0.04);">
+                                <p class="text-xs text-slate-400">CNC Cutting · Carving · Parametric Design · Nagpur</p>
+                                <a href="<?= e(app_url('services')) ?>" class="flex items-center gap-1 text-xs font-bold hover:opacity-80" style="color:#322EA1;">
+                                    View All Services
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,16 +128,79 @@ unset($_SESSION['flash']);
 
             <button class="inline-flex h-10 w-10 items-center justify-center rounded border border-slate-300 text-slate-900 lg:hidden" data-mobile-toggle aria-label="Open menu">☰</button>
         </div>
+
+        <!-- Mobile Menu -->
         <div class="hidden border-t border-slate-200 bg-white px-4 py-4 lg:hidden" data-mobile-menu>
-            <div class="grid gap-2">
-                <?php foreach ([['Home',''], ['About','about-us'], ['Services','services'], ['Gallery','gallery'], ['Blog','blog'], ['Contact','contact-us']] as [$label, $path]): ?>
-                    <a class="rounded-md px-3 py-2 font-semibold text-slate-800 hover:bg-red-50 hover:text-red-700" href="<?= e(app_url($path)) ?>"><?= e($label) ?></a>
+            <div class="grid gap-1">
+                <?php foreach ([['Home',''], ['About','about-us'], ['Gallery','gallery'], ['Blog','blog'], ['Contact','contact-us']] as [$label, $path]): ?>
+                    <a class="rounded-md px-3 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#322EA1]" href="<?= e(app_url($path)) ?>"><?= e($label) ?></a>
                 <?php endforeach; ?>
-                <div class="mt-2 border-t border-slate-200 pt-2">
-                    <?php foreach ($servicePages as $slug => $service): ?>
-                        <a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-red-50 hover:text-red-700" href="<?= e(app_url($slug)) ?>"><?= e($service['title']) ?></a>
-                    <?php endforeach; ?>
+
+                <!-- Services Accordion -->
+                <div>
+                    <button class="flex w-full items-center justify-between rounded-md px-3 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#322EA1]" data-services-toggle aria-expanded="false">
+                        <span>Services</span>
+                        <svg class="h-4 w-4 transition-transform duration-200" data-services-chevron xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    <div class="hidden mt-1 overflow-hidden rounded-xl border border-slate-200" data-services-panel>
+                        <!-- Header -->
+                        <div class="flex items-center justify-between px-4 py-2.5" style="background: linear-gradient(135deg, #322EA1 0%, #4340c4 100%);">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/>
+                                </svg>
+                                <p class="text-xs font-bold uppercase tracking-widest text-white/80">Our Services</p>
+                            </div>
+                            <p class="text-xs text-white/60">Nagpur · Maharashtra</p>
+                        </div>
+                        <!-- Service Links -->
+                        <div class="divide-y divide-slate-100 bg-white">
+                            <?php
+                            $mobileServiceIcons = [
+                                'M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3v2m0 10v2m-7-7H3m16 0h-2M6.34 6.34l1.42 1.42m8.49 8.49l1.41 1.41M6.34 17.66l1.42-1.42m8.49-8.49l1.41-1.41',
+                                'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+                                'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z',
+                                'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+                                'M12 2a5 5 0 015 5c0 5-5 13-5 13S7 12 7 7a5 5 0 015-5z',
+                                'M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z',
+                                'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z',
+                                'M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z',
+                                'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12h8m-4-4v8',
+                            ];
+                            $mi = 0;
+                            foreach ($servicePages as $slug => $service):
+                                $micon = $mobileServiceIcons[$mi % count($mobileServiceIcons)];
+                                $mi++;
+                            ?>
+                            <a class="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-[#322EA1]/5" href="<?= e(app_url($slug)) ?>">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg" style="background-color: rgba(50,46,161,0.08);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" style="color:#322EA1;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="<?= $micon ?>"/>
+                                    </svg>
+                                </span>
+                                <span class="flex-1 text-sm font-semibold text-slate-700"><?= e($service['title']) ?></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                        <!-- Footer -->
+                        <div class="flex items-center justify-between border-t border-slate-100 px-4 py-2.5" style="background: rgba(50,46,161,0.04);">
+                            <p class="text-xs text-slate-400">CNC Cutting · Carving · Nagpur</p>
+                            <a href="<?= e(app_url('services')) ?>" class="flex items-center gap-1 text-xs font-bold" style="color:#322EA1;">
+                                View All
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </header>
@@ -161,9 +266,41 @@ unset($_SESSION['flash']);
         </div>
     </footer>
 
-    <a class="fixed right-4 top-20 z-40 rounded-full bg-emerald-500 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-emerald-600 md:right-5 md:top-24" href="https://wa.me/<?= e($company['whatsapp']) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation." target="_blank" rel="noopener" aria-label="WhatsApp Digi CNC">WhatsApp</a>
-    <a class="fixed right-[7.6rem] top-20 z-40 rounded-full bg-red-600 px-4 py-3 text-sm font-extrabold text-white shadow-2xl transition hover:bg-red-700 md:right-5 md:top-40" href="tel:+919766653376" aria-label="Call Digi CNC">Call</a>
+    <!-- WhatsApp floating icon button (bottom-right) -->
+    <a class="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 shadow-2xl transition hover:scale-110 hover:bg-emerald-600"
+       href="https://wa.me/<?= e($company['whatsapp']) ?>?text=Hello%20Digi%20CNC,%20I%20need%20a%20CNC%20project%20quotation."
+       target="_blank" rel="noopener" aria-label="WhatsApp Digi CNC">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" class="h-7 w-7">
+            <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.83.74 5.49 2.03 7.8L.5 31.5l7.93-2.08A15.45 15.45 0 0016 31.5C24.56 31.5 31.5 24.56 31.5 16S24.56.5 16 .5zm0 28.28a13.17 13.17 0 01-6.72-1.84l-.48-.29-4.7 1.23 1.26-4.58-.31-.5A13.22 13.22 0 1116 28.78zm7.26-9.9c-.4-.2-2.35-1.16-2.71-1.29-.37-.13-.63-.2-.9.2-.26.4-1.02 1.29-1.25 1.55-.23.27-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.97-1.18-1.05-1.98-2.35-2.21-2.75-.23-.4-.02-.62.17-.82.18-.18.4-.46.6-.7.2-.23.26-.4.4-.66.13-.27.07-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68h-.76c-.27 0-.7.1-1.06.5-.37.4-1.4 1.37-1.4 3.33 0 1.97 1.43 3.87 1.63 4.13.2.27 2.8 4.27 6.79 5.98.95.41 1.69.66 2.27.84.95.3 1.82.26 2.5.16.76-.11 2.35-.96 2.68-1.89.33-.93.33-1.73.23-1.89-.1-.17-.36-.27-.76-.47z"/>
+        </svg>
+    </a>
+
+    <!-- Call floating icon button (above WhatsApp) -->
+    <a class="fixed bottom-24 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 shadow-2xl transition hover:scale-110 hover:bg-red-700"
+       href="tel:+919766653376" aria-label="Call Digi CNC">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="h-7 w-7">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+        </svg>
+    </a>
 
     <script src="<?= e(versioned_asset_url('assets/js/app.js')) ?>" defer></script>
+
+    <!-- Services accordion — app.js ke baad load hoga -->
+    <script>
+    window.addEventListener('load', function () {
+        const servicesToggle  = document.querySelector('[data-services-toggle]');
+        const servicesPanel   = document.querySelector('[data-services-panel]');
+        const servicesChevron = document.querySelector('[data-services-chevron]');
+
+        if (servicesToggle && servicesPanel) {
+            servicesToggle.addEventListener('click', function () {
+                const isOpen = !servicesPanel.classList.contains('hidden');
+                servicesPanel.classList.toggle('hidden', isOpen);
+                if (servicesChevron) servicesChevron.classList.toggle('rotate-180', !isOpen);
+                servicesToggle.setAttribute('aria-expanded', String(!isOpen));
+            });
+        }
+    });
+    </script>
 </body>
 </html>

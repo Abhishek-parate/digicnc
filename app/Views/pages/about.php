@@ -131,6 +131,7 @@
         </div>
 
     </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -265,6 +266,12 @@
         </div>
 
     </div>
+    <div class="prose-content" style="padding-top:3.5rem;">
+      <p>Digi CNC was created to solve a common problem in the interior and manufacturing market: clients had creative ideas, digital drawings or urgent production requirements, but they needed a CNC partner who could speak both design and execution. A drawing may look correct on screen, but CNC production asks practical questions. Is the profile closed? Is the pattern strong enough? Is the material suitable? Will the edge finish meet expectations? Can the parts be nested efficiently? Will the panel survive transport and installation? These questions shaped the working style of Digi CNC from the beginning.</p>
+      <p>Under the leadership of <?= e($company['founder']) ?>, the company has built more than five years of experience across MDF, HDHMR, wood, acrylic, PVC, ACP, WPC, plywood and decorative laminates. The work includes simple 2D profile cutting, high-detail jali, carved decorative panels, mandir designs, wall panels, furniture components, signage elements, prototypes and parametric design parts. The company serves both B2B and B2C clients, which gives the team a broad understanding of real project expectations. A contractor needs speed and repeatability. An architect needs design intent protected. A homeowner needs guidance and confidence. A prototype company needs accuracy and iteration. Digi CNC is structured to respond to all of these contexts.</p>
+      <p>The story of the company is not only about machinery. It is about improving the conversation around CNC work in Nagpur. Many project delays happen because the file is incomplete, the material is chosen too late, or the finishing requirement is not discussed before machining. Digi CNC encourages clients to share dimensions, quantity, material thickness, reference images, CAD files and timelines early. This helps the team plan the job properly and helps the client avoid avoidable rework. The business has grown through this practical approach: listen carefully, review the input, guide the client, cut accurately and keep the final use in mind.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -349,6 +356,7 @@
 
         </div>
     </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -455,6 +463,7 @@
         </div>
 
     </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -514,6 +523,7 @@
             <?php endforeach; ?>
         </div>
     </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -635,6 +645,12 @@
         </div>
 
     </div>
+    <div class="prose-content">
+      <p>Digi CNC treats quality as a sequence, not a final inspection checkbox. A clean final part begins with a clean file. Closed curves, correct scale, appropriate spacing, proper nesting, manageable depth and clear labels reduce machining risk. Material quality matters too. Sheet flatness, thickness variation, surface condition and finish plan can affect the final output. The team looks at these details before production whenever possible.</p>
+      <p>During machining, attention shifts to workholding, tool condition, feed approach, pass depth and edge behavior. For 3D carving, depth and step-over influence finish quality. For jali, inside corners and thin bridges need careful review. For furniture parts, repeatability and part organization matter. For acrylic and ACP, surface protection and edge quality become important. For parametric work, numbering and assembly logic can be as important as cutting accuracy.</p>
+      <p>After cutting, the team considers whether the parts are ready for pickup, finishing, assembly or further coordination. Digi CNC does not claim that CNC alone completes every project. Finishing, polishing, lamination, painting, installation and hardware work may involve other trades. But CNC accuracy gives those trades a stronger starting point. That is the value the company protects.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -735,6 +751,7 @@
 
         </div>
     </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════

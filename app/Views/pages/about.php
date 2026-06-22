@@ -20,7 +20,7 @@
                 <!-- Left: Heading + Description + CTA -->
                 <div class="px-8 py-10 lg:px-12 lg:py-12 flex flex-col justify-center">
                     <p class="text-xs font-bold uppercase tracking-[0.18em] mb-4" style="color: #322EA1;">About Digi CNC</p>
-                    <h1 class="font-heading text-3xl lg:text-4xl font-black text-slate-900 leading-tight">
+                    <h1 class="font-heading text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
                         Crafting Precision.<br>
                         Delivering <span style="color: #322EA1;">Excellence.</span>
                     </h1>
@@ -136,7 +136,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 2 — Company Story
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-white pt-4 pb-12 lg:pt-6 lg:pb-16 px-4 lg:px-6">
     <div class="mx-auto max-w-7xl">
@@ -147,7 +146,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Company Story</p>
                 <span class="block w-12 h-px" style="background: #a5a8e0;"></span>
             </div>
-            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+            <h2 class="font-heading text-2xl sm:text-3xl lg:text-[2rem] font-bold text-slate-900 leading-tight">
                 From drawings and material sheets<br class="hidden sm:block">
                 to reliable <span style="color: #322EA1;">CNC output.</span>
             </h2>
@@ -227,7 +226,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Our Journey</h3>
+                        <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">Our Journey</h3>
                         <p class="text-sm leading-7 text-slate-600 text-justify">Digi CNC was created to solve a common problem in the interior and manufacturing market: clients had creative ideas, digital drawings or urgent production requirements, but they needed a CNC partner who could speak both design and execution. A drawing may look correct on screen, but CNC production asks practical questions. Is the profile closed? Is the pattern strong enough? Is the material suitable? Will the edge finish meet expectations? Can the parts be nested efficiently? Will the panel survive transport and installation? These questions shaped the working style of Digi CNC from the beginning.</p>
                     </div>
                 </div>
@@ -237,7 +236,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Our Experience</h3>
+                        <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">Our Experience</h3>
                         <p class="text-sm leading-7 text-slate-600 text-justify">Under the leadership of <?= e($company['founder']) ?>, the company has built more than five years of experience across MDF, HDHMR, wood, acrylic, PVC, ACP, WPC, plywood and decorative laminates. The work includes simple 2D profile cutting, high-detail jali, carved decorative panels, mandir designs, wall panels, furniture components, signage elements, prototypes and parametric design parts. The company serves both B2B and B2C clients, which gives the team a broad understanding of real project expectations.</p>
                     </div>
                 </div>
@@ -247,7 +246,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Why It Matters</h3>
+                        <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">Why It Matters</h3>
                         <p class="text-sm leading-7 text-slate-600 text-justify">The story of the company is not only about machinery. It is about improving the conversation around CNC work in Nagpur. Many project delays happen because the file is incomplete, the material is chosen too late, or the finishing requirement is not discussed before machining. Digi CNC encourages clients to share dimensions, quantity, material thickness, reference images, CAD files and timelines early. This helps the team plan the job properly and helps the client avoid avoidable rework.</p>
                     </div>
                 </div>
@@ -257,7 +256,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#322EA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-heading text-base font-bold text-slate-900 mb-2">Who We Work With</h3>
+                        <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">Who We Work With</h3>
                         <p class="text-sm leading-7 text-slate-600 text-justify">Digi CNC works with contractors, architects, interior designers, furniture manufacturers, shop owners, branding companies, event professionals, homeowners and prototype developers. Some clients need a single panel. Some manage large-scale interior packages. The size of the order does not change the core commitment: accurate output, honest communication and reliable timelines.</p>
                     </div>
                 </div>
@@ -272,7 +271,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 3 — Our Values
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-slate-50 pt-12 pb-12 lg:pt-16 lg:pb-16">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
@@ -283,7 +281,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Our Values</p>
                 <span class="block w-10 h-px" style="background: #a5a8e0;"></span>
             </div>
-            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+            <h2 class="font-heading text-2xl sm:text-3xl lg:text-[2rem] font-bold text-slate-900 leading-tight">
                 Built on Purpose. Driven by <span style="color: #322EA1;">Precision.</span>
             </h2>
             <p class="mt-3 mx-auto max-w-xl text-slate-500 text-base leading-7">
@@ -304,7 +302,7 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-center font-heading text-2xl font-black text-slate-900">Mission</h2>
+                <h2 class="text-center font-heading text-lg font-bold text-slate-900">Mission</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: #322EA1;"></div>
                 <p class="flex-1 text-sm leading-7 text-slate-500 text-justify">To provide Nagpur and Maharashtra with CNC cutting and carving services that turn design intent into accurate, buildable, finish-ready components for interiors, furniture, prototypes and custom manufacturing.</p>
                 <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-center">
@@ -323,7 +321,7 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-center font-heading text-2xl font-black text-white">Vision</h2>
+                <h2 class="text-center font-heading text-lg font-bold text-white">Vision</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: rgba(165,180,252,0.7);"></div>
                 <p class="flex-1 text-sm leading-7 text-justify" style="color: #c7d2fe;">To become a trusted CNC manufacturing partner for architects, designers, manufacturers and homeowners who rely on premium advice and dependable project communication.</p>
                 <div class="mt-5 pt-4 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.12);">
@@ -342,7 +340,7 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-center font-heading text-2xl font-black text-slate-900">Core Promise</h2>
+                <h2 class="text-center font-heading text-lg font-bold text-slate-900">Core Promise</h2>
                 <div class="mx-auto mt-2 w-10 h-0.5 rounded-full mb-4" style="background: #322EA1;"></div>
                 <p class="flex-1 text-sm leading-7 text-slate-500 text-justify">Every project receives manufacturing attention before machine time: file review, material fit, pattern strength, production feasibility, edge quality and clear next-step guidance.</p>
                 <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-center">
@@ -357,7 +355,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 4 — Founder Section
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-white pt-12 pb-12 lg:pt-16 lg:pb-16">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
@@ -368,7 +365,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Founder Section</p>
                 <span class="block w-10 h-px" style="background: #a5a8e0;"></span>
             </div>
-            <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight">Led by <?= e($company['founder']) ?> with hands-on manufacturing discipline.</h2>
+            <h2 class="font-heading text-xl sm:text-2xl lg:text-[1.75rem] font-bold text-slate-900 leading-tight">Led by <?= e($company['founder']) ?> with hands-on manufacturing discipline.</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-10 lg:gap-12">
@@ -402,7 +399,7 @@
                 <div class="pointer-events-none absolute -left-10 -bottom-10 h-36 w-36 rounded-full" style="background: rgba(50,46,161,0.15); filter: blur(2.5rem);"></div>
 
                 <div class="text-center mb-8">
-                    <h3 class="font-heading text-lg font-bold lg:text-xl">Core Strengths</h3>
+                    <h3 class="font-heading text-base font-bold lg:text-lg">Core Strengths</h3>
                     <div class="mx-auto mt-3 w-10 h-0.5 rounded-full" style="background: rgba(165,180,252,0.7);"></div>
                 </div>
 
@@ -464,7 +461,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 5 — Manufacturing Process (dark bg)
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-slate-950 text-white relative overflow-hidden pt-16 pb-16 lg:pt-24 lg:pb-24">
 
@@ -479,7 +475,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #a5b4fc;">Manufacturing Process</p>
                 <span class="block w-10 h-px" style="background: rgba(165,180,252,0.5);"></span>
             </div>
-            <h2 class="font-heading font-black text-white leading-tight" style="font-size: clamp(1.75rem, 3.5vw, 2.5rem);">A controlled process for cutting, carving, engraving and custom CNC work.</h2>
+            <h2 class="font-heading font-bold text-white leading-tight text-2xl sm:text-3xl lg:text-[2rem]">A controlled process for cutting, carving, engraving and custom CNC work.</h2>
             <p class="mt-5 max-w-3xl mx-auto text-center leading-8" style="color: #94a3b8;">Digi CNC begins with understanding the use case. A wall panel, cabinet part, acrylic display, ACP component, carved artwork and parametric installation do not need the same production approach. The process starts by checking the drawing or reference against material, thickness, quantity and desired finish. If the file needs cleaning, the team can guide the client before production. If a sample is sensible, it is recommended before a larger batch.</p>
         </div>
 
@@ -498,7 +494,7 @@
                     <div class="absolute inset-x-0 top-0 h-[3px] rounded-t-2xl" style="background: linear-gradient(90deg, transparent, #322EA1, transparent); opacity: 0.8;"></div>
 
                     <div class="flex items-center justify-between mb-5">
-                        <span class="font-heading text-3xl font-black" style="color: rgba(165,180,252,0.5);"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+                        <span class="font-heading text-2xl font-bold" style="color: rgba(165,180,252,0.5);"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
                         <div class="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110" style="background: rgba(50,46,161,0.3); border: 1px solid rgba(165,180,252,0.3);">
                             <?php
                                 $icons = [
@@ -512,7 +508,7 @@
                         </div>
                     </div>
 
-                    <h3 class="font-heading text-xl font-bold text-white"><?= e($item[0]) ?></h3>
+                    <h3 class="font-heading text-base font-bold text-white"><?= e($item[0]) ?></h3>
                     <div class="mt-2 mb-4 w-8 h-0.5 rounded-full" style="background: rgba(165,180,252,0.6);"></div>
                     <p class="text-sm leading-7 text-justify" style="color: #b4bcd4;"><?= e($item[1]) ?></p>
                 </article>
@@ -524,7 +520,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 6 — Quality Assurance
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-white relative overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-16">
 
@@ -538,7 +533,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Quality Assurance</p>
                 <span class="block w-8 h-px" style="background: linear-gradient(90deg, #322EA1, transparent);"></span>
             </div>
-            <h2 class="font-heading font-black text-slate-900 leading-tight" style="font-size: clamp(1.9rem, 3.5vw, 2.75rem);">
+            <h2 class="font-heading font-bold text-slate-900 leading-tight text-2xl sm:text-3xl lg:text-[2rem]">
                 Quality Begins Before The <span style="color: #322EA1;">Router</span> Starts.
             </h2>
             <p class="mt-3 text-sm font-semibold text-slate-500 tracking-wide">
@@ -596,7 +591,7 @@
                     <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-heading font-extrabold text-white text-sm"
                         style="background: linear-gradient(155deg, #0f172a 0%, #322EA1 100%);">01</div>
                     <div class="flex-1">
-                        <h3 class="font-heading text-base font-bold text-slate-900 flex items-center gap-2">
+                        <h3 class="font-heading text-sm font-bold text-slate-900 flex items-center gap-2">
                             Before Production
                             <span class="hidden sm:block w-6 h-px bg-slate-300"></span>
                         </h3>
@@ -611,7 +606,7 @@
                     <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-heading font-extrabold text-white text-sm"
                         style="background: linear-gradient(155deg, #0f172a 0%, #322EA1 100%);">02</div>
                     <div class="flex-1">
-                        <h3 class="font-heading text-base font-bold text-slate-900 flex items-center gap-2">
+                        <h3 class="font-heading text-sm font-bold text-slate-900 flex items-center gap-2">
                             During Machining
                             <span class="hidden sm:block w-6 h-px bg-slate-300"></span>
                         </h3>
@@ -626,7 +621,7 @@
                     <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-heading font-extrabold text-white text-sm"
                         style="background: linear-gradient(155deg, #0f172a 0%, #322EA1 100%);">03</div>
                     <div class="flex-1">
-                        <h3 class="font-heading text-base font-bold text-slate-900 flex items-center gap-2">
+                        <h3 class="font-heading text-sm font-bold text-slate-900 flex items-center gap-2">
                             After Cutting
                             <span class="hidden sm:block w-6 h-px bg-slate-300"></span>
                         </h3>
@@ -647,7 +642,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 7 — Business Network
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-slate-50 pt-12 pb-12 lg:pt-16 lg:pb-16">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
@@ -658,7 +652,7 @@
                 <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color: #322EA1;">Business Network</p>
                 <span class="block w-10 h-px" style="background: #a5a8e0;"></span>
             </div>
-            <h2 class="mt-3 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900 lg:text-[2.25rem] lg:leading-snug">
+            <h2 class="mt-3 font-heading text-2xl sm:text-3xl lg:text-[2rem] font-bold tracking-tight text-slate-900 leading-snug">
                 Serving the ecosystem around
                 <span style="color: #322EA1;">architecture,<br class="hidden sm:block"> interiors, furniture and manufacturing.</span>
             </h2>
@@ -699,7 +693,7 @@
 
                 <div class="flex items-center gap-3 mb-5">
                     <span class="flex-1 border-t border-dashed" style="border-color: #c7caef;"></span>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 whitespace-nowrap">Timeline</h3>
+                    <h3 class="font-heading text-base font-bold text-slate-900 whitespace-nowrap">Timeline</h3>
                     <span class="flex-1 border-t border-dashed" style="border-color: #c7caef;"></span>
                 </div>
 
@@ -748,7 +742,6 @@
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 8 — Start a Project / Contact CTA
-     Consistent padding: pt-16 pb-16 lg:pt-24 lg:pb-24
 ════════════════════════════════════════════════════════ -->
 <section class="bg-white pt-12 pb-12 lg:pt-16 lg:pb-16">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
@@ -763,7 +756,7 @@
                 </div>
                 <div class="w-8 h-0.5 rounded-full mb-3" style="background: #322EA1;"></div>
 
-                <h2 class="font-heading font-black leading-tight text-slate-900" style="font-size: clamp(2rem, 3.5vw, 2.8rem);">
+                <h2 class="font-heading font-bold leading-tight text-slate-900 text-2xl sm:text-3xl lg:text-[2rem]">
                     Send a drawing,<br>
                     reference image or<br>
                     <span style="color: #322EA1;">requirement.</span>

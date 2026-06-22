@@ -208,6 +208,7 @@ $heroSlides = $repo->heroSlides(); ?>
 
 
 <!-- ── Why Choose Digi CNC ──────────────────────────────────── -->
+<!-- ── Why Choose Digi CNC ──────────────────────────────────── -->
 <section class="bg-white py-8 lg:py-10">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
         <div>
@@ -215,43 +216,87 @@ $heroSlides = $repo->heroSlides(); ?>
             <h2 class="mt-3 font-heading text-3xl font-bold leading-tight text-slate-900">
                 A manufacturing partner for design-led CNC work, not just a cutting vendor.
             </h2>
+            <div class="mt-4 h-[3px] w-12 rounded-full" style="background-color:#322EA1 !important"></div>
         </div>
 
         <div class="mt-10 grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
             <div>
-                <p class="text-sm leading-8 text-slate-600 text-justify">
-                    CNC work can look simple from the outside: load a file, clamp a sheet, run a machine. In practice, the best output depends on a chain of decisions made before the router starts. Digi CNC studies the drawing, material, thickness, pattern strength, edge quality, finish plan and intended use. That is why the company is useful for both B2B production work and B2C custom projects. A furniture contractor may need repeatable parts with clean labels. An architect may need a parametric surface that can actually be assembled. A homeowner may need a mandir jali that looks detailed but does not become fragile. Each case requires different judgment.
+                <p class="text-sm leading-8 text-justify" style="color:#475569 !important">
+                    CNC work can look simple from the outside: load a file, clamp a sheet, run a
+                    machine. In practice, the best output depends on a chain of decisions made before the router starts. Digi CNC studies the drawing, material, thickness, pattern strength, edge quality, finish plan and intended use. That is why the company is useful for both B2B production work and B2C custom projects. A furniture contractor may need repeatable parts with clean labels. An architect may need a parametric surface that can actually be assembled. A homeowner may need a mandir jali that looks detailed but does not become fragile. Each case requires different judgment.
                 </p>
-                <p class="mt-4 text-sm leading-8 text-slate-600 text-justify">
+                <p class="mt-4 text-sm leading-8 text-justify" style="color:#475569 !important">
                     Founded by Mr. Krunal Patel and backed by more than five years of hands-on CNC experience, Digi CNC serves Nagpur and Maharashtra with practical production thinking. The team works across MDF, HDHMR, wood, acrylic, PVC, ACP, WPC, plywood and decorative laminates. The result is a service that feels premium because the basics are treated seriously: file preparation, tool choice, material support, clean cutting strategy, review before machining, communication during production and sensible delivery expectations.
                 </p>
             </div>
 
-            <div class="grid auto-rows-fr gap-4 sm:grid-cols-2">
-                <?php foreach (
+            <div class="grid auto-rows-fr gap-5 sm:grid-cols-2">
+                <?php
+                $whyChooseItems = [
                     [
-                        ['title' => 'Drawing-First Review', 'body' => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.'],
-                        ['title' => 'Material Aware',       'body' => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.'],
-                        ['title' => 'B2B + B2C Support',   'body' => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.'],
-                        ['title' => 'Conversion Guidance', 'body' => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.'],
-                    ] as $index => $item
-                ): ?>
-                    <article class="feature-card group flex h-full flex-col transition hover:-translate-y-1 hover:border-red-200 hover:shadow-md">
-                        <span class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-red-50 font-heading text-sm font-semibold text-red-600 transition group-hover:bg-red-100">
-                            <?= e(sprintf('%02d', $index + 1)) ?>
-                        </span>
-                        <h3 class="font-heading text-base font-semibold leading-snug text-slate-800">
-                            <?= e($item['title']) ?>
-                        </h3>
-                        <p class="mt-1 text-sm leading-6 text-slate-600 text-justify"><?= e($item['body']) ?></p>
+                        'title' => 'Drawing-First Review',
+                        'body'  => 'Files are checked for scale, closed profiles, duplicate lines, thin webs, tool clearance and production risk before cutting.',
+                        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/>',
+                    ],
+                    [
+                        'title' => 'Material Aware',
+                        'body'  => 'MDF, HDHMR, acrylic, ACP, WPC and wood behave differently, so toolpath planning is matched to the material and finish goal.',
+                        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>',
+                    ],
+                    [
+                        'title' => 'B2B + B2C Support',
+                        'body'  => 'The workflow supports architects, furniture teams, contractors, manufacturers, artists, prototype companies and homeowners.',
+                        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>',
+                    ],
+                    [
+                        'title' => 'Conversion Guidance',
+                        'body'  => 'Every inquiry is guided toward the clearest next step: file correction, sample cutting, quotation, production or design refinement.',
+                        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.665-.633-1.148-1.275-.973l-4.222 1.151a1.125 1.125 0 01-.578 0L9.65 3.876a1.125 1.125 0 00-.578 0L4.222 5.027C3.58 5.202 3 5.685 3 6.351v13.74c0 .665.633 1.148 1.275.973l3.84-1.046a1.125 1.125 0 01.61 0l5.55 1.514a1.125 1.125 0 00.578 0z"/>',
+                    ],
+                ];
+                ?>
+                <?php foreach ($whyChooseItems as $index => $item): ?>
+                    <article class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                        <!-- decorative dot grid (bottom-right) -->
+                        <svg class="pointer-events-none absolute bottom-4 right-4 h-10 w-10 text-slate-100 transition-colors duration-300 group-hover:text-indigo-50" fill="currentColor" viewBox="0 0 40 40">
+                            <?php for ($r = 0; $r < 4; $r++): ?>
+                                <?php for ($c = 0; $c < 4; $c++): ?>
+                                    <circle cx="<?= e(4 + $c * 10) ?>" cy="<?= e(4 + $r * 10) ?>" r="1.6"/>
+                                <?php endfor; ?>
+                            <?php endfor; ?>
+                        </svg>
+
+                        <!-- Number badge -->
+                        <div class="relative z-10 mb-3" style="display:flex !important; justify-content:flex-start !important;">
+                            <span class="inline-flex items-center justify-center rounded-md font-heading text-[0.7rem] font-bold leading-none tracking-wide text-white shadow-md whitespace-nowrap"
+                                  style="background-color:#322EA1 !important; display:inline-flex !important; width:auto !important; max-width:max-content !important; padding:6px 11px !important;">
+                                <?= e(sprintf('%02d', $index + 1)) ?>
+                            </span>
+                        </div>
+
+                        <!-- Icon + Title — inline to save vertical space -->
+                        <div class="relative z-10 mb-3 flex items-center gap-3">
+                            <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 transition-colors duration-300 group-hover:bg-indigo-100">
+                                <svg width="20" height="20" fill="none" stroke="#322EA1" stroke-width="1.6" viewBox="0 0 24 24">
+                                    <?= $item['icon'] ?>
+                                </svg>
+                            </div>
+                            <h3 class="font-heading text-base font-bold leading-snug text-slate-900">
+                                <?= e($item['title']) ?>
+                            </h3>
+                        </div>
+
+                        <div class="relative z-10 mb-2 h-0.5 w-8 rounded-full" style="background-color:#322EA1 !important"></div>
+                        <p class="relative z-10 text-sm leading-6 text-justify" style="color:#475569 !important">
+                            <?= e($item['body']) ?>
+                        </p>
                     </article>
                 <?php endforeach; ?>
             </div>
         </div>
-    </div>
 
-
-    </div>
+       
     </div>
 </section>
 

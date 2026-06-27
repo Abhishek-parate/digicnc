@@ -42,6 +42,7 @@ $heroSlides = $repo->heroSlides(); ?>
 
         <!-- 3 hero slide cards -->
         <?php
+        $highlights = $repo->homeHighlights();
         $slideIcons = [
             '<path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>',
             '<path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.4-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597l-5.814 3.876a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>',
@@ -49,7 +50,7 @@ $heroSlides = $repo->heroSlides(); ?>
         ];
         $slideLabels = [
             'Precision CNC Cutting',
-            'CNC Carving & Jali Work',
+            'CNC Carving & Perametric design',
             'Parametric Design',
         ];
         $slideTitles = [
@@ -59,13 +60,13 @@ $heroSlides = $repo->heroSlides(); ?>
         ];
         $slideCopies = [
             'High-precision cutting for MDF, ACP, acrylic, wood and more with smooth edges and perfect accuracy.',
-            'From traditional jali patterns to 3D carvings, we bring fine details to life with unmatched precision and premium finish.',
+            'From traditional jali patterns to 3D carvings, and perametric designs.',
             'Parametric panels, ribs, and feature walls – designed to impress and built to perfection with CNC technology.',
         ];
         ?>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <?php foreach ($heroSlides as $index => $slide): ?>
+    <?php foreach ($highlights as $index => $card): ?>
                 <article
                     class="hero-card group relative flex overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-indigo-300 hover:ring-2 hover:ring-indigo-500 hover:ring-offset-2 cursor-pointer"
                     data-hero-dot="<?= e($index) ?>"
@@ -79,9 +80,9 @@ $heroSlides = $repo->heroSlides(); ?>
                     <!-- Image — left half -->
                     <div class="relative w-[42%] flex-shrink-0 overflow-hidden">
                         <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            src="<?= e(asset_url($slide['image'])) ?>"
-                            alt="<?= e($slide['alt']) ?>"
-                            loading="<?= $index === 0 ? 'eager' : 'lazy' ?>">
+    src="<?= e(asset_url($card['image'])) ?>"
+    alt="<?= e($card['alt']) ?>"
+    loading="<?= $index === 0 ? 'eager' : 'lazy' ?>">
                     </div>
 
                     <!-- Content — right half -->
@@ -95,22 +96,19 @@ $heroSlides = $repo->heroSlides(); ?>
                         </div>
 
                         <!-- Label -->
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-indigo-600 mb-2">
-                            <?= e($slideLabels[$index] ?? $slide['eyebrow']) ?>
-                        </p>
+                       <p class="text-[0.6rem] font-bold uppercase tracking-[0.18em] text-indigo-600 mb-2">
+    <?= e($card['eyebrow']) ?>
+</p>
 
-                        <!-- Title -->
-                        <h2 class="font-heading text-base font-bold leading-snug text-slate-900 mb-1 whitespace-pre-line">
-                            <?= e($slideTitles[$index] ?? $slide['title']) ?>
-                        </h2>
+<h2 class="font-heading text-base font-bold leading-snug text-slate-900 mb-1 whitespace-pre-line">
+    <?= e($card['title']) ?>
+</h2>
 
-                        <!-- Accent line -->
-                        <div class="mb-3 h-0.5 w-8 rounded-full bg-indigo-600"></div>
+<div class="mb-3 h-0.5 w-8 rounded-full bg-indigo-600"></div>
 
-                        <!-- Copy -->
-                        <p class="text-[0.75rem] leading-6 text-slate-500 flex-1">
-                            <?= e($slideCopies[$index] ?? $slide['copy']) ?>
-                        </p>
+<p class="text-[0.75rem] leading-6 text-slate-500 flex-1">
+    <?= e($card['copy']) ?>
+</p>
                     </div>
 
                 </article>
@@ -118,12 +116,12 @@ $heroSlides = $repo->heroSlides(); ?>
         </div>
 
         <!-- Button centered below middle card -->
-        <div class="mt-6 grid grid-cols-3">
-            <div></div>
-            <div class="flex justify-center">
-                <a class="btn-primary px-8 py-3 text-sm" href="<?= e(app_url('contact-us')) ?>">Get CNC Quote</a>
+        <div class="mt-6 flex justify-center md:grid md:grid-cols-3">
+            <div class="hidden md:block"></div>
+            <div class="mt-6 flex justify-center">
+                <a class="btn-primary px-8 py-3 text-sm rounded-full" href="<?= e(app_url('contact-us')) ?>">Get CNC Quote</a>
             </div>
-            <div></div>
+            <div class="hidden md:block"></div>
         </div>
 
     </div>
@@ -185,11 +183,12 @@ $heroSlides = $repo->heroSlides(); ?>
 
 <!-- ── Send Drawing / Contact form ──────────────────────────── -->
 <section class="bg-slate-50 py-8 lg:py-10">
+    <?php $contactImage = $repo->contactFormImage(); ?>
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-4 md:grid-cols-2 md:gap-10 lg:px-6">
         <div class="order-2 min-h-[320px] overflow-hidden rounded-lg shadow-xl md:order-1">
             <img class="h-full w-full object-cover"
-                src="<?= e(asset_url($heroSlides[0]['image'])) ?>"
-                alt="<?= e($heroSlides[0]['alt']) ?>"
+                src="<?= e(asset_url($contactImage['image'])) ?>"
+                alt="<?= e($contactImage['alt']) ?>"
                 loading="lazy">
         </div>
         <div class="order-1 rounded-lg border border-slate-200 bg-white p-6 shadow-xl md:order-2 lg:p-8">
@@ -262,7 +261,7 @@ $heroSlides = $repo->heroSlides(); ?>
                         <svg class="pointer-events-none absolute bottom-4 right-4 h-10 w-10 text-slate-100 transition-colors duration-300 group-hover:text-indigo-50" fill="currentColor" viewBox="0 0 40 40">
                             <?php for ($r = 0; $r < 4; $r++): ?>
                                 <?php for ($c = 0; $c < 4; $c++): ?>
-                                    <circle cx="<?= e(4 + $c * 10) ?>" cy="<?= e(4 + $r * 10) ?>" r="1.6"/>
+                                    <circle cx="<?= e(4 + $c * 10) ?>" cy="<?= e(4 + $r * 10) ?>" r="1.6" />
                                 <?php endfor; ?>
                             <?php endfor; ?>
                         </svg>
@@ -270,7 +269,7 @@ $heroSlides = $repo->heroSlides(); ?>
                         <!-- Number badge -->
                         <div class="relative z-10 mb-3" style="display:flex !important; justify-content:flex-start !important;">
                             <span class="inline-flex items-center justify-center rounded-md font-heading text-[0.7rem] font-bold leading-none tracking-wide text-white shadow-md whitespace-nowrap"
-                                  style="background-color:#322EA1 !important; display:inline-flex !important; width:auto !important; max-width:max-content !important; padding:6px 11px !important;">
+                                style="background-color:#322EA1 !important; display:inline-flex !important; width:auto !important; max-width:max-content !important; padding:6px 11px !important;">
                                 <?= e(sprintf('%02d', $index + 1)) ?>
                             </span>
                         </div>
@@ -296,7 +295,7 @@ $heroSlides = $repo->heroSlides(); ?>
             </div>
         </div>
 
-       
+
     </div>
 </section>
 
@@ -663,10 +662,10 @@ $firstService = $services[0] ?? null;
         };
         ?>
 
-        <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            <?php foreach ($repo->industries() as $industry): ?>
-                <div class="group flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-4 transition duration-300 hover:border-red-400/40 hover:bg-white/10">
-                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md border border-red-400/20 bg-red-500/10 text-red-300 transition duration-300 group-hover:bg-red-500/20 group-hover:text-red-200">
+<div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+                <?php foreach ($repo->industries() as $industry): ?>
+<div class="group flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-4 transition duration-300 hover:border-red-400/40 hover:bg-white/10 min-h-[60px]">
+                        <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md border border-red-400/20 bg-red-500/10 text-red-300 transition duration-300 group-hover:bg-red-500/20 group-hover:text-red-200">
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <?= $pickIndustryIcon($industry) ?>
                         </svg>

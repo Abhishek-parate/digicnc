@@ -86,10 +86,19 @@ final class ContentRepository
         return $this->content['stats'];
     }
 
-    public function heroSlides(): array
+   public function heroSlides(): array
     {
         return $this->content['hero_slides'];
     }
+    public function homeHighlights(): array
+{
+    return $this->content['home_highlights'] ?? [];
+}
+
+public function contactFormImage(): array
+{
+    return $this->content['contact_form_image'] ?? [];
+}
 
     public function seo(string $key): array
     {

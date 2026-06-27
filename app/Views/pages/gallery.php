@@ -8,14 +8,14 @@ $categories = array_values(array_unique(array_map(fn (array $item): string => $i
     alt="CNC Project Gallery Digi CNC Nagpur"
 >
 
-    <div class="mx-auto mt-12 max-w-7xl px-4 py-12 lg:px-6">
+    <div class="mx-auto mt-6 max-w-7xl px-4 py-6 lg:px-6">
         <p class="eyebrow text-red-600">Project Gallery</p>
 
-        <h1 class="mt-4 max-w-7xl font-heading text-4xl font-extrabold leading-tight text-slate-950 lg:text-4xl">
+        <h1 class="mt-3 max-w-7xl font-heading text-4xl font-extrabold leading-tight text-slate-950 lg:text-4xl">
             CNC Cutting, Carving, Jali, Furniture Components and Custom Project Gallery
         </h1>
 
-        <p class="mt-6 mb-8 max-w-7xl text-lg leading-8 text-slate-600">
+        <p class="mt-4 mb-6 max-w-7xl text-lg leading-8 text-slate-600">
             Browse Digi CNC project categories for 2D CNC cutting, 3D CNC carving, parametric designs, decorative jali, furniture components, mandir designs and custom CNC projects.
         </p>
     </div>

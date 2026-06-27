@@ -13,7 +13,7 @@
 </section>
 
 <section class="section bg-white">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_380px] lg:px-6 text-justify">
         <article class="prose-content">
             <p class="eyebrow">Location Landing Page</p>
             <h2 class="section-title"><?= e($page['title']) ?> with practical manufacturing support from Digi CNC.</h2>

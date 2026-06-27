@@ -30,9 +30,9 @@
         <div style="width:48px;height:4px;background:#322EA1;border-radius:4px;margin-bottom:18px;"></div>
 
         <!-- Summary -->
-        <p style="color:#475569;font-size:1rem;line-height:1.85;max-width:680px;margin:0 0 40px;">
-            <?= e($service['summary']) ?>
-        </p>
+<p style="color:#475569;font-size:1rem;line-height:1.85;max-width:100%;margin:0 0 40px;">
+    <?= e($service['summary']) ?>
+</p>
 
         <!-- ── BEST FOR ── -->
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
@@ -138,7 +138,7 @@
             <p class="mt-4 leading-7 text-slate-700">To request a quotation, share the drawing or reference, size, material, thickness, quantity, finish plan and timeline. If you are not sure which material to use, explain the application and desired look. The team can suggest practical options before quoting.</p>
 
 
-            <!-- ═══════════════════════════════════════════
+ <!-- ═══════════════════════════════════════════
      RELATED CNC SERVICES SECTION
      Self-contained — kisi bhi page mein use karo
 ═══════════════════════════════════════════ -->
@@ -207,8 +207,7 @@
             <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h2 class="font-heading text-xl font-bold text-slate-900">Related Pages</h2>
                 <ul class="mt-4 space-y-3 text-sm font-semibold">
-                    <li><a class="text-slate-700 hover:text-red-600" href="<?= e(app_url('cnc-cutting-nagpur')) ?>">CNC Cutting Nagpur</a></li>
-                    <li><a class="text-slate-700 hover:text-red-600" href="<?= e(app_url('cnc-cutting-maharashtra')) ?>">CNC Cutting Maharashtra</a></li>
+                    
                     <?php foreach (array_slice($repo->servicePages(), 0, 4, true) as $relatedSlug => $related): ?>
                         <?php if ($relatedSlug !== $slug): ?>
                             <li><a class="text-slate-700 hover:text-red-600" href="<?= e(app_url($relatedSlug)) ?>"><?= e($related['title']) ?></a></li>

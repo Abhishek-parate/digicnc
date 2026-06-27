@@ -19,9 +19,9 @@ $waNumber = preg_replace('/\D/', '', $company['whatsapp']);
         <h1 class="mt-3 font-heading text-3xl font-extrabold leading-tight text-slate-950 lg:text-4xl">
             Request a CNC Cutting, Carving, Jali or Custom Project Quotation
         </h1>
-        <p class="mt-4 max-w-3xl text-justify text-base leading-7 text-slate-600">
-            Call, WhatsApp or send a detailed inquiry. Share material details, dimensions, thickness, quantity, design file status and project timeline for a faster project review. The more information you provide, the easier it is for Digi CNC to evaluate feasibility, recommend suitable materials and provide an accurate quotation.
-        </p>
+        <p class="mt-4 text-justify text-base leading-7 text-slate-600">
+    Call, WhatsApp or send a detailed inquiry. Share material details, dimensions, thickness, quantity, design file status and project timeline for a faster project review. The more information you provide, the easier it is for Digi CNC to evaluate feasibility, recommend suitable materials and provide an accurate quotation.
+</p>
     </div>
 </div>
 
@@ -144,7 +144,7 @@ $waNumber = preg_replace('/\D/', '', $company['whatsapp']);
 
     </div>
 
-    <!-- MAP (untouched) -->
+   <!-- MAP -->
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
         <div class="mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
             <iframe
@@ -152,12 +152,10 @@ $waNumber = preg_replace('/\D/', '', $company['whatsapp']);
                 class="h-80 w-full"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Nagpur%2C%20Maharashtra%2C%20India&output=embed">
+                src="https://www.google.com/maps?q=<?= e(rawurlencode('DiGi CNC, Bharatwada Rd, Bharatwada, Nagpur, Maharashtra 440035')) ?>&output=embed">
             </iframe>
         </div>
     </div>
-
-</section>
 
 <!-- BOTTOM PROSE + FAQ -->
 <section class="bg-white py-8 lg:py-12">
